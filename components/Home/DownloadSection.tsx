@@ -15,7 +15,7 @@ const DownloadSection = () => {
   const steps = [
     {
       id: 1,
-      title: "Download the AuroFX App",
+      title: "Download the AuroMarkets FX App",
       description: "Our app is available for both Android and iOS.",
       icon: FiSmartphone,
       color: "from-primary to-primary",
@@ -100,7 +100,7 @@ const DownloadSection = () => {
             <br className="hidden sm:block" /> any time
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed px-4">
-            With the AuroFX App, you can trade whether you're at home or on the
+            With the AuroMarkets FX App, you can trade whether you're at home or on the
             go. Benefit from advanced tools and features, no matter the
             situation.
           </p>
@@ -202,7 +202,7 @@ const DownloadSection = () => {
                         <FaQrcode className="text-white text-4xl" />
                         <div className="text-center">
                           <div className="text-white text-xs font-bold">
-                            AuroFX
+                            AuroMarkets FX
                           </div>
                           <div className="text-gray-400 text-[10px]">
                             Scan to download
@@ -219,7 +219,7 @@ const DownloadSection = () => {
                   <h4 className="text-lg font-bold mb-2">Mobile QR Download</h4>
                   <p className="text-gray-300 text-sm mb-4">
                     Scan this QR code with your mobile device to download the
-                    AuroFX app directly.
+                    AuroMarkets FX app directly.
                   </p>
                   <p className="text-gray-400 text-xs">
                     Available on App Store and Google Play
@@ -253,7 +253,7 @@ const DownloadSection = () => {
                   {/* Actual Image - Replace with your image path */}
                   <Image
                     src="/assets/images/twophones.png"
-                    alt="AuroFX Mobile App Interface"
+                    alt="AuroMarkets FX Mobile App Interface"
                     fill
                     className="object-contain object-center"
                     sizes="(max-width: 768px) 400px, (max-width: 1024px) 500px, 600px"

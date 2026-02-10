@@ -1,9 +1,8 @@
-import GrowthSection from "@/components/About/GrowthSection"
-import PageHero from "@/components/About/Hero"
-import MissionVision from "@/components/About/MissionVision"
-import StorySection from "@/components/About/StorySection"
-import TeamSection from "@/components/About/TeamSection"
-import React from "react"
+import PageHero from "../..//components/About/Hero"
+import MissionVision from "../../components/About/MissionVision"
+import StorySection from "../../components/About/StorySection"
+import TeamSection from "../../components/About/TeamSection"
+import GrowthSection from "../../components/About/GrowthSection"
 
 const About = () => {
   return (

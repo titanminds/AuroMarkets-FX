@@ -1,4 +1,4 @@
-import FAQSection from '@/components/FAQS/FAQSection'
+import FAQSection from '../../components/FAQS/FAQSection'
 import React from 'react'
 
 const page = () => {

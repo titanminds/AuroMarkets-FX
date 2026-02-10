@@ -205,14 +205,14 @@ const FAQSection: React.FC = () => {
       items: 8,
       faqs: [
         {
-          question: "What is AuroFX Global and what services do you offer?",
+          question: "What is AuroMarkets FX Global and what services do you offer?",
           answer:
-            "AuroFX Global is a leading forex trading platform offering comprehensive trading solutions including currency trading, CFDs, commodities, and indices. We provide advanced trading tools, educational resources, and 24/7 customer support to help traders succeed in the financial markets.",
+            "AuroMarkets FX Global is a leading forex trading platform offering comprehensive trading solutions including currency trading, CFDs, commodities, and indices. We provide advanced trading tools, educational resources, and 24/7 customer support to help traders succeed in the financial markets.",
         },
         {
-          question: "Is AuroFX Global regulated?",
+          question: "Is AuroMarkets FX Global regulated?",
           answer:
-            "Yes, AuroFX Global is fully regulated and licensed under international financial authorities. We adhere to strict regulatory standards ensuring the safety and security of our clients' funds and personal information.",
+            "Yes, AuroMarkets FX Global is fully regulated and licensed under international financial authorities. We adhere to strict regulatory standards ensuring the safety and security of our clients' funds and personal information.",
         },
         {
           question: "How do I open a trading account?",

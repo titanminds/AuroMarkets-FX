@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, memo } from "react";
 
-const TradingViewTicker = () => {
+export const TradingViewTicker = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

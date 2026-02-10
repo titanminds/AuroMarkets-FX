@@ -81,7 +81,7 @@ const ContactSection = () => {
                 <BiMapPin className="w-5 h-5 text-gray-300" />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                AuroFX UK LTD 114 Lowbrook road Ilford, London IG1 2HJ United
+                AuroMarkets FX UK LTD 114 Lowbrook road Ilford, London IG1 2HJ United
                 Kingdom
               </p>
             </div>

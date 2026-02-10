@@ -1,6 +1,6 @@
-import PageHero from '@/components/About/Hero'
-import ContactForm from '@/components/Contact/ContactForm'
-import ContactSection from '@/components/Contact/ContactSection'
+import PageHero from '../../components/About/Hero'
+import ContactForm from '../../components/Contact/ContactForm'
+import ContactSection from '../../components/Contact/ContactSection'
 import React from 'react'
 
 const Contact = () => {
