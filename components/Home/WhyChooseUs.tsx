@@ -480,7 +480,14 @@ export default function Ecosystem() {
             />
             <div className="relative bg-gradient-to-br from-background via-primary/5 to-background border-2 border-primary/10 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-sm">
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                <div className="flex justify-center">
+                  <img
+                    src="/assets/images/Logo.png"
+                    alt="Logo"
+                    className="h-20 w-auto object-contain"
+                  />
+                </div>
+                {/* <div className="text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
                   Auro<span className="text-primary">FX</span>
                 </div>
                 <p className="text-mate text-sm mb-6 flex items-center justify-center gap-2">
@@ -507,7 +514,7 @@ export default function Ecosystem() {
                       }}
                     />
                   ))}
-                </div>
+                </div> */}
                 <div className="mt-6 grid grid-cols-3 gap-4 text-xs text-mate">
                   <div className="text-center">
                     <div className="font-bold text-primary">Real-time</div>
