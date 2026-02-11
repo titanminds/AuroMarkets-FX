@@ -283,14 +283,14 @@ export default function Ecosystem() {
       icon: <FaBullhorn className="text-primary" />,
     },
   ]
-  const dots = React.useMemo(() => {
-    return Array.from({ length: 20 }).map(() => ({
-      x: Math.random() * 100,
-      opacity: Math.random() * 0.5 + 0.1,
-      duration: Math.random() * 20 + 10,
-      delay: Math.random() * 10,
-    }))
-  }, [])
+  // const dots = React.useMemo(() => {
+  //   return Array.from({ length: 20 }).map(() => ({
+  //     x: Math.random() * 100,
+  //     opacity: Math.random() * 0.5 + 0.1,
+  //     duration: Math.random() * 20 + 10,
+  //     delay: Math.random() * 10,
+  //   }))
+  // }, [])
   return (
     <section className="relative w-full py-8 lg:py-32 bg-[#f2f3f5] overflow-hidden font-sans">
     
@@ -321,7 +321,7 @@ export default function Ecosystem() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-mate/80 text-sm lg:text-base max-w-2xl mx-auto">
-          Titansmind is fully integrated to cover all your needs
+          AuroMarkets FX is fully integrated to cover all your needs
         </motion.p>
       </div>
 
