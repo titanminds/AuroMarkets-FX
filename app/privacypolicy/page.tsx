@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface SectionProps {
   title: string;
-  content: string;
+  content: React.ReactNode;
   index: number;
 }
 

@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import {
   FaMobileAlt,
   FaBolt,
@@ -16,24 +16,24 @@ import {
   FaNetworkWired,
   FaCircle,
   FaCheckCircle,
-} from "react-icons/fa";
+} from "react-icons/fa"
 import {
   SiTableau,
   SiGoogleanalytics,
   SiTradingview,
   SiTwilio,
   SiAmazonroute53,
-} from "react-icons/si";
+} from "react-icons/si"
 
 interface NodeProps {
-  label: string;
-  items: { name: string; icon?: React.ReactNode }[];
-  count: string;
-  className: string;
-  align?: "left" | "right" | "center";
-  index: number;
-  isMobile?: boolean;
-  icon: React.ReactNode;
+  label: string
+  items: { name: string; icon?: React.ReactNode }[]
+  count: string
+  className: string
+  align?: "left" | "right" | "center"
+  index: number
+  isMobile?: boolean
+  icon: React.ReactNode
 }
 
 const Node = ({
@@ -46,7 +46,7 @@ const Node = ({
   isMobile = false,
   icon,
 }: NodeProps) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <motion.div
@@ -55,12 +55,10 @@ const Node = ({
       transition={{ delay: index * 0.1 }}
       className={`absolute flex flex-col ${align === "left" ? "items-start" : align === "right" ? "items-end" : "items-center"} gap-3 ${className} ${isMobile ? "relative !static" : ""}`}
       onMouseEnter={() => !isMobile && setIsHovered(true)}
-      onMouseLeave={() => !isMobile && setIsHovered(false)}
-    >
+      onMouseLeave={() => !isMobile && setIsHovered(false)}>
       <motion.span
         animate={isHovered ? { y: -5 } : {}}
-        className="text-[10px] font-bold text-gray-400 tracking-[0.2em] uppercase px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm flex items-center gap-2 border border-mate/10"
-      >
+        className="text-[10px] font-bold text-gray-400 tracking-[0.2em] uppercase px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm flex items-center gap-2 border border-mate/10">
         {icon}
         {label}
       </motion.span>
@@ -70,8 +68,7 @@ const Node = ({
             ? { scale: 1.05, boxShadow: "0 10px 40px rgba(255, 174, 0, 0.2)" }
             : {}
         }
-        className="flex items-center gap-2 bg-background border border-primary/20 shadow-sm p-1 rounded-full hover:shadow-md transition-all backdrop-blur-sm"
-      >
+        className="flex items-center gap-2 bg-background border border-primary/20 shadow-sm p-1 rounded-full hover:shadow-md transition-all backdrop-blur-sm">
         <div className="flex items-center gap-1 px-2">
           {items.slice(0, isMobile ? 2 : 3).map((item, i) => (
             <motion.div
@@ -79,8 +76,7 @@ const Node = ({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/5 to-background border border-primary/20 text-[10px] font-bold text-foreground flex items-center gap-2"
-            >
+              className="px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/5 to-background border border-primary/20 text-[10px] font-bold text-foreground flex items-center gap-2">
               {item.icon}
               {item.name}
             </motion.div>
@@ -89,30 +85,29 @@ const Node = ({
         <motion.div
           whileHover={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
-          className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary flex items-center justify-center text-[10px] font-bold text-background shadow-lg"
-        >
+          className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary flex items-center justify-center text-[10px] font-bold text-background shadow-lg">
           {count}
         </motion.div>
       </motion.div>
     </motion.div>
-  );
-};
+  )
+}
 
 export default function Ecosystem() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [activeTab, setActiveTab] = useState("all");
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false)
+  const [activeTab, setActiveTab] = useState("all")
+  const [isExpanded, setIsExpanded] = useState(false)
+  const [hoveredNode, setHoveredNode] = useState<string | null>(null)
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
+      setIsMobile(window.innerWidth < 1024)
+    }
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   const mobileNodes = [
     {
@@ -258,7 +253,7 @@ export default function Ecosystem() {
       icon: <FaBullhorn className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
-  ];
+  ]
 
   const categories = [
     {
@@ -287,37 +282,25 @@ export default function Ecosystem() {
       label: "Marketing",
       icon: <FaBullhorn className="text-primary" />,
     },
-  ];
-
+  ]
+  const dots = React.useMemo(() => {
+    return Array.from({ length: 20 }).map(() => ({
+      x: Math.random() * 100,
+      opacity: Math.random() * 0.5 + 0.1,
+      duration: Math.random() * 20 + 10,
+      delay: Math.random() * 10,
+    }))
+  }, [])
   return (
     <section className="relative w-full py-8 lg:py-32 bg-[#f2f3f5] overflow-hidden font-sans">
-      {/* Animated Background Dots */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-primary/10 rounded-full"
-            initial={{
-              y: -100,
-              x: Math.random() * 100,
-              opacity: Math.random() * 0.5 + 0.1,
-            }}
-            transition={{
-              duration: Math.random() * 20 + 10,
-              repeat: Infinity,
-              delay: Math.random() * 10,
-            }}
-          />
-        ))}
-      </div>
+    
 
       {/* Header */}
       <div className="text-center mb-8 lg:mb-20 px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-3 bg-mate px-6 py-3 rounded-full mb-6 backdrop-blur-sm border border-primary/10"
-        >
+          className="inline-flex items-center gap-3 bg-mate px-6 py-3 rounded-full mb-6 backdrop-blur-sm border border-primary/10">
           <h4 className="text-xs font-semibold text-background/70 tracking-[0.3em] uppercase flex items-center gap-2">
             ECOSYSTEM
           </h4>
@@ -327,8 +310,7 @@ export default function Ecosystem() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 lg:mb-6 px-4 text-foreground"
-        >
+          className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 lg:mb-6 px-4 text-foreground">
           Grow your business with{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary animate-gradient-x">
             No Constraints
@@ -338,8 +320,7 @@ export default function Ecosystem() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-mate/80 text-sm lg:text-base max-w-2xl mx-auto"
-        >
+          className="text-mate/80 text-sm lg:text-base max-w-2xl mx-auto">
           Titansmind is fully integrated to cover all your needs
         </motion.p>
       </div>
@@ -357,8 +338,7 @@ export default function Ecosystem() {
                   activeTab === category.id
                     ? "bg-gradient-to-r from-primary to-primary text-background shadow-lg"
                     : "bg-background text-foreground border border-primary/20 hover:border-primary"
-                }`}
-              >
+                }`}>
                 {category.icon}
                 {category.label}
               </button>
@@ -394,8 +374,7 @@ export default function Ecosystem() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-background rounded-2xl p-4 shadow-lg border border-primary/10"
-              >
+                className="bg-background rounded-2xl p-4 shadow-lg border border-primary/10">
                 <div className="flex items-center gap-2 mb-2">
                   {stat.icon}
                   <span className="text-lg font-bold text-foreground">
@@ -419,18 +398,15 @@ export default function Ecosystem() {
                   whileHover={{ y: -5 }}
                   onMouseEnter={() => setHoveredNode(node.label)}
                   onMouseLeave={() => setHoveredNode(null)}
-                  className={`bg-gradient-to-br ${node.gradient} border border-primary/10 rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all cursor-pointer`}
-                >
+                  className={`bg-gradient-to-br ${node.gradient} border border-primary/10 rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all cursor-pointer`}>
                   <div className="flex items-start justify-between mb-4">
                     <div
-                      className={`p-3 rounded-xl bg-gradient-to-br ${node.gradient} border border-primary/10`}
-                    >
+                      className={`p-3 rounded-xl bg-gradient-to-br ${node.gradient} border border-primary/10`}>
                       {node.icon}
                     </div>
                     <motion.span
                       whileHover={{ scale: 1.1 }}
-                      className="text-xs font-bold text-background bg-gradient-to-r from-primary to-primary px-3 py-1 rounded-full"
-                    >
+                      className="text-xs font-bold text-background bg-gradient-to-r from-primary to-primary px-3 py-1 rounded-full">
                       {node.count}
                     </motion.span>
                   </div>
@@ -441,8 +417,7 @@ export default function Ecosystem() {
                     {node.items.slice(0, 3).map((item, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1.5 text-xs font-medium bg-background border border-primary/20 rounded-full flex items-center gap-2 hover:border-primary transition-colors"
-                      >
+                        className="px-3 py-1.5 text-xs font-medium bg-background border border-primary/20 rounded-full flex items-center gap-2 hover:border-primary transition-colors">
                         {item.icon}
                         {item.name}
                       </span>
@@ -453,8 +428,7 @@ export default function Ecosystem() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="mt-4 pt-4 border-t border-primary/10"
-                    >
+                      className="mt-4 pt-4 border-t border-primary/10">
                       <p className="text-xs text-mate flex items-center gap-2">
                         <FaCheckCircle className="text-primary w-3 h-3" />
                         Seamlessly integrated with {node.count} solutions
@@ -473,8 +447,7 @@ export default function Ecosystem() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-primary text-background font-medium text-sm shadow-lg hover:shadow-xl transition-all"
-              >
+                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-primary text-background font-medium text-sm shadow-lg hover:shadow-xl transition-all">
                 {isExpanded ? (
                   <>
                     <FaChevronUp className="w-4 h-4" />
@@ -494,8 +467,7 @@ export default function Ecosystem() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative mb-12"
-          >
+            className="relative mb-12">
             <motion.div
               animate={{
                 scale: [1, 1.02, 1],
@@ -567,8 +539,7 @@ export default function Ecosystem() {
                   x1="0%"
                   y1="0%"
                   x2="100%"
-                  y2="100%"
-                >
+                  y2="100%">
                   <stop offset="0%" stopColor="var(--primary)" />
                   <stop offset="50%" stopColor="var(--primary)" />
                   <stop offset="100%" stopColor="var(--primary)" />
@@ -578,8 +549,7 @@ export default function Ecosystem() {
                   x1="0%"
                   y1="0%"
                   x2="100%"
-                  y2="100%"
-                >
+                  y2="100%">
                   <stop
                     offset="0%"
                     stopColor="var(--primary)"
@@ -649,8 +619,7 @@ export default function Ecosystem() {
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 100 }}
             className="relative z-20"
-            whileHover={{ scale: 1.05 }}
-          >
+            whileHover={{ scale: 1.05 }}>
             <motion.div
               animate={{
                 rotate: [0, 5, -5, 0],
@@ -659,8 +628,7 @@ export default function Ecosystem() {
                 duration: 10,
                 repeat: Infinity,
               }}
-              className="relative w-48 h-48 rounded-full border-8 border-transparent bg-gradient-to-r from-primary via-primary to-primary p-1 shadow-2xl"
-            >
+              className="relative w-48 h-48 rounded-full border-8 border-transparent bg-gradient-to-r from-primary via-primary to-primary p-1 shadow-2xl">
               <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center p-8">
                 {/* <div className="text-3xl font-bold tracking-tighter text-foreground">
                   Auro<span className="text-primary">FX</span>
@@ -771,5 +739,5 @@ export default function Ecosystem() {
         </div>
       )}
     </section>
-  );
+  )
 }
