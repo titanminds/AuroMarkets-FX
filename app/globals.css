@@ -24,6 +24,19 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+/* optional custom utility classes used in the hero */
+.glow {
+  text-shadow: 0 0 20px #ffae00, 0 0 40px rgba(255, 174, 0, 0.4);
+}
+
+.card-glow {
+  box-shadow: 0 0 30px rgba(255, 174, 0, 0.15);
+}
+
+.backdrop-blur-custom {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
 
 body {
   background: var(--background);

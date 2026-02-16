@@ -14,6 +14,7 @@ import {
   FiSmartphone,
 } from "react-icons/fi"
 import { useRef, useState } from "react"
+import Link from "next/link"
 
 export default function StorySection() {
   const containerRef = useRef(null)
@@ -34,7 +35,8 @@ export default function StorySection() {
     {
       year: "2019",
       title: "Regulatory Milestone",
-      description: "Secured international licensing and established segregated client fund accounts",
+      description:
+        "Secured international licensing and established segregated client fund accounts",
       icon: FiShield,
       stats: "Fully Regulated",
       color: "from-primary to-mate",
@@ -44,7 +46,8 @@ export default function StorySection() {
     {
       year: "2020",
       title: "Platform Launch",
-      description: "Launched MT4 and MT5 platforms with competitive spreads and instant execution",
+      description:
+        "Launched MT4 and MT5 platforms with competitive spreads and instant execution",
       icon: FiSmartphone,
       stats: "10,000+ Downloads",
       color: "from-primary to-mate",
@@ -53,7 +56,8 @@ export default function StorySection() {
     {
       year: "2021",
       title: "MENA Expansion",
-      description: "Opened regional headquarters in Dubai to better serve Middle Eastern traders",
+      description:
+        "Opened regional headquarters in Dubai to better serve Middle Eastern traders",
       icon: FiGlobe,
       stats: "15+ Countries",
       color: "from-primary to-mate",
@@ -62,7 +66,8 @@ export default function StorySection() {
     {
       year: "2022",
       title: "Islamic Accounts",
-      description: "Introduced swap-free accounts tailored for Muslim traders across the region",
+      description:
+        "Introduced swap-free accounts tailored for Muslim traders across the region",
       icon: FiUsers,
       stats: "5,000+ Islamic Accounts",
       color: "from-primary to-mate",
@@ -72,7 +77,8 @@ export default function StorySection() {
     {
       year: "2023",
       title: "Product Expansion",
-      description: "Added commodities, indices, and crypto CFDs to our trading portfolio",
+      description:
+        "Added commodities, indices, and crypto CFDs to our trading portfolio",
       icon: FiBarChart2,
       stats: "60+ Trading Instruments",
       color: "from-primary to-mate",
@@ -81,7 +87,8 @@ export default function StorySection() {
     {
       year: "2024",
       title: "Award-Winning Service",
-      description: "Recognized as 'Best Broker for Customer Support' by industry leaders",
+      description:
+        "Recognized as 'Best Broker for Customer Support' by industry leaders",
       icon: FiAward,
       stats: "98% Client Satisfaction",
       color: "from-primary to-mate",
@@ -91,7 +98,8 @@ export default function StorySection() {
     {
       year: "2025",
       title: "Global Community",
-      description: "Empowering over 50,000 traders across 35+ countries worldwide",
+      description:
+        "Empowering over 50,000 traders across 35+ countries worldwide",
       icon: FiTrendingUp,
       stats: "50,000+ Active Traders",
       color: "from-primary to-mate",
@@ -101,7 +109,7 @@ export default function StorySection() {
 
   return (
     <section
-      className="py-32 relative overflow-hidden bg-background"
+      className="py-8 pb-16 relative overflow-hidden bg-background"
       ref={containerRef}>
       {/* Advanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -115,7 +123,7 @@ export default function StorySection() {
             filter: "grayscale(100%)",
           }}
         />
-        
+
         {/* Animated trading bars */}
         <div className="absolute top-20 left-10 opacity-20">
           {[...Array(5)].map((_, i) => (
@@ -144,7 +152,7 @@ export default function StorySection() {
               Our Journey Since 2018
             </span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             The AuroMarkets{" "}
             <motion.span
@@ -160,7 +168,8 @@ export default function StorySection() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-mate max-w-3xl mx-auto leading-relaxed">
-            From a bold vision to a trusted broker — our journey of empowering traders across the globe.
+            From a bold vision to a trusted broker — our journey of empowering
+            traders across the globe.
           </motion.p>
         </motion.div>
 
@@ -170,8 +179,7 @@ export default function StorySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
-        >
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {[
             { label: "Years of Experience", value: "7+", icon: FiCalendar },
             { label: "Active Traders", value: "50K+", icon: FiUsers },
@@ -184,8 +192,7 @@ export default function StorySection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 + index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/50 backdrop-blur-sm border border-black/5 rounded-xl p-4 text-center"
-            >
+              className="bg-white/50 backdrop-blur-sm border border-black/5 rounded-xl p-4 text-center">
               <stat.icon className="w-5 h-5 text-primary mx-auto mb-2" />
               <div className="text-xl font-bold text-black">{stat.value}</div>
               <div className="text-xs text-mate">{stat.label}</div>
@@ -311,18 +318,15 @@ export default function StorySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
+          className="mt-20 text-center space-y-5">
           <p className="text-mate text-lg">
             Join 50,000+ traders who already trust AuroMarkets FX
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-4 px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-          >
+          <Link
+            href="https://portal.auromarketsfx.com/register"
+            className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors">
             Start Trading Today
-          </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

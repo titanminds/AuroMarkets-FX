@@ -3,6 +3,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { MdCallMade } from "react-icons/md"
+import Link from "next/link"
 
 interface GrowthMetric {
   label: string
@@ -29,9 +30,9 @@ const GrowthSection = () => {
             <span className="text-primary">Value Transparency</span>
           </h2>
 
-          <button className="bg-primary text-mate px-4 md:px-7 py-2.5 md:py-3 rounded-sm flex items-center gap-2 font-bold text-[13px] md:text-[15px] hover:bg-primary/70 cursor-pointer transition-all active:scale-95 shadow-lg">
-            Official App <MdCallMade size={18} className="hidden md:block" />
-          </button>
+          <Link href="https://portal.auromarketsfx.com/register" className="w-fit bg-primary text-mate px-4 md:px-7 py-2.5 md:py-3 rounded-sm flex items-center gap-2 font-bold text-[13px] md:text-[15px] hover:bg-primary/70 cursor-pointer transition-all active:scale-95 shadow-lg">
+            Start Now <MdCallMade size={18} className="hidden md:block" />
+          </Link>
         </div>
         {/* Right Content - Chart */}
         <div className="w-full lg:w-1/2">

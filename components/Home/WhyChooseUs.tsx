@@ -506,15 +506,15 @@ export default function Ecosystem() {
             icon={mobileNodes[3].icon}
           />
           <Node
-            label="BI & Analytics"
-            className="top-30 right-52"
+            label="Login"
+            className="top-30 right-56"
             align="right"
             index={4}
             icon={mobileNodes[4].icon}
           />
           <Node
-            label="VOIP & Comms"
-            className="top-1/2 right-44 -translate-y-1/2"
+            label="Trading Accounts"
+            className="top-1/2 right-30 -translate-y-1/2"
             align="right"
             index={5}
             icon={mobileNodes[5].icon}

@@ -61,18 +61,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full sticky top-0 z-100 transition-all duration-300 ${
+      className={`w-full fixed top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white backdrop-blur-l shadow-2xl"
-          : "bg-white"
+          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       }`}
     >
       {/* Main Navigation Bar */}
-      <div className="px-4 sm:px-6 lg:px-16 z-60">
+      <div className="px-4 sm:px-6 lg:px-16">
         <div className="max-w-7xl mx-auto flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <motion.a
-          href="/"
+            href="/"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="shrink-0"
@@ -94,6 +94,7 @@ const Navbar = () => {
                 icon={link.icon}
                 hasDropdown={link.hasDropdown}
                 tradingLinks={link.hasDropdown ? tradingLinks : undefined}
+                scrolled={scrolled}
               />
             ))}
           </div>
@@ -104,7 +105,11 @@ const Navbar = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="hidden sm:flex p-2 text-gray-600 hover:text-primary hover:bg-gray-100 rounded-full transition-colors"
+              className={`hidden sm:flex p-2 rounded-full transition-colors ${
+                scrolled 
+                  ? "text-gray-600 hover:text-primary hover:bg-gray-100" 
+                  : "text-white hover:text-primary hover:bg-white/10"
+              }`}
             >
               <HiOutlineSearch size={20} />
             </motion.button>
@@ -121,7 +126,11 @@ const Navbar = () => {
             {/* Mobile Menu Toggle */}
             <motion.button
               whileTap={{ scale: 0.9 }}
-              className="lg:hidden p-2 text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
+              className={`lg:hidden p-2 rounded-lg transition-colors ${
+                scrolled 
+                  ? "text-gray-800 hover:bg-gray-100" 
+                  : "text-white hover:bg-white/10"
+              }`}
               onClick={() => setIsOpen(!isOpen)}
             >
               <AnimatePresence mode="wait">
@@ -175,24 +184,8 @@ const Navbar = () => {
                 stiffness: 300,
                 mass: 0.8,
               }}
-              className="fixed left-0 right-0 bg-gradient-to-b from-white to-gray-50 lg:hidden shadow-2xl rounded-b-3xl overflow-hidden"
+              className="fixed left-0 right-0 bg-white lg:hidden shadow-2xl rounded-b-3xl overflow-hidden"
             >
-              {/* Menu Header */}
-              {/* <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                <img
-                  src="/assets/images/Logo.png"
-                  alt="Logo"
-                  className="h-10 w-auto object-contain"
-                />
-                <motion.button
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => setIsOpen(false)}
-                  className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
-                >
-                  <HiX size={24} />
-                </motion.button>
-              </div> */}
-
               {/* Menu Content */}
               <div className="max-h-[calc(100vh-120px)] overflow-y-auto px-6 py-4 mt-5">
                 {/* Navigation Links */}
@@ -213,7 +206,6 @@ const Navbar = () => {
                             className="flex items-center justify-between w-full p-4 text-lg font-semibold text-gray-800 hover:text-primary hover:bg-gray-100 rounded-xl transition-all"
                           >
                             <div className="flex items-center gap-3">
-                              {/* <link.icon className="text-primary" size={18} /> */}
                               <span>{link.label}</span>
                             </div>
                             <motion.div
@@ -268,7 +260,6 @@ const Navbar = () => {
                           className="flex items-center justify-between p-4 text-lg font-semibold text-gray-800 hover:text-primary hover:bg-gray-100 rounded-xl transition-all active:scale-95"
                         >
                           <div className="flex items-center gap-3">
-                            {/* <link.icon className="text-primary" size={18} /> */}
                             <span>{link.label}</span>
                           </div>
                           <MdCallMade className="text-primary" size={20} />
@@ -331,10 +322,7 @@ const Navbar = () => {
                   <p className="text-sm text-gray-500 mb-2">
                     Need help? We're here for you
                   </p>
-                  <span
-                   
-                    className="text-primary font-semibold hover:underline"
-                  >
+                  <span className="text-primary font-semibold hover:underline">
                     info@auromarketsfx.com
                   </span>
                 </motion.div>
@@ -353,18 +341,21 @@ const NavLink = ({
   icon: Icon,
   hasDropdown,
   tradingLinks,
+  scrolled,
 }: {
   label: string;
   href: string;
   icon: any;
   hasDropdown?: boolean;
   tradingLinks?: any[];
+  scrolled: boolean;
 }) => {
   if (hasDropdown) {
     return (
       <div className="relative group">
-        <button className="flex items-center gap-1.5 text-sm xl:text-base font-semibold text-gray-800 hover:text-primary transition-colors group px-2 py-1">
-          {/* <Icon size={14} className="text-primary" /> */}
+        <button className={`flex items-center gap-1.5 text-sm xl:text-base font-semibold transition-colors group px-2 py-1 ${
+          scrolled ? "text-gray-800 hover:text-primary" : "text-white hover:text-primary"
+        }`}>
           <span>{label}</span>
           <HiChevronDown
             size={14}
@@ -397,9 +388,10 @@ const NavLink = ({
   return (
     <Link
       href={href}
-      className="relative group px-2 py-1 text-sm xl:text-base font-semibold text-gray-800 hover:text-primary transition-colors flex items-center gap-1.5"
+      className={`relative group px-2 py-1 text-sm xl:text-base font-semibold transition-colors flex items-center gap-1.5 ${
+        scrolled ? "text-gray-800 hover:text-primary" : "text-white hover:text-primary"
+      }`}
     >
-      {/* <Icon size={14} className="text-primary" /> */}
       <span>{label}</span>
       <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all group-hover:w-4/5" />
     </Link>

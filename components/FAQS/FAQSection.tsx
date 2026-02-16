@@ -276,7 +276,7 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "What is the minimum deposit?",
-      answer: "Minimum deposit is $250 for Basic account, $5,000 for Premium, and $25,000 for VIP accounts.",
+      answer: "Minimum deposit is $10 for Basic account, $5,000 for Premium, and $25,000 for VIP accounts.",
     },
     {
       question: "What payment methods do you accept?",
@@ -288,20 +288,13 @@ const FAQSection: React.FC = () => {
     },
     {
       question: "What leverage do you offer?",
-      answer: "Leverage up to 1:500 for professional clients and up to 1:30 for retail clients, depending on account type.",
+      answer: "Leverage up to 1:1000 for professional clients and up to 1:30 for retail clients, depending on account type.",
     },
     {
       question: "What are your trading hours?",
       answer: "Forex trading is available 24/5 from Sunday 10:00 PM GMT to Friday 10:00 PM GMT.",
     },
-    {
-      question: "Do you offer a demo account?",
-      answer: "Yes, we offer free demo accounts with $50,000 virtual money to practice trading.",
-    },
-    {
-      question: "What are the withdrawal fees?",
-      answer: "We don't charge withdrawal fees, but your payment provider might have their own fees.",
-    },
+   
     {
       question: "Is my money safe?",
       answer: "Yes, client funds are held in segregated accounts with top-tier banks.",

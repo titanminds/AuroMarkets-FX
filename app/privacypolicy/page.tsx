@@ -552,7 +552,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 </motion.p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <motion.a
-                    href="mailto:dpo@AuroMarkets FX.com"
+                    href="mailto:info@auromarketsfx.com"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="inline-flex items-center justify-center px-6 py-3 bg-mate text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
