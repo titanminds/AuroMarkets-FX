@@ -198,7 +198,7 @@ const Navbar = () => {
               className="fixed left-0 right-0 bg-white lg:hidden shadow-2xl rounded-b-3xl overflow-hidden"
             >
               {/* Menu Header with Logo */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-100">
+              {/* <div className="flex items-center justify-between p-6 border-b border-gray-100">
                 <img
                   src="/assets/images/Logo-black.png"
                   alt="Logo"
@@ -211,7 +211,7 @@ const Navbar = () => {
                 >
                   <HiX size={24} />
                 </motion.button>
-              </div>
+              </div> */}
 
               {/* Menu Content */}
               <div className="max-h-[calc(100vh-180px)] overflow-y-auto px-6 py-4">
