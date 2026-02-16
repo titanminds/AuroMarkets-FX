@@ -221,7 +221,7 @@ const HeroSection: React.FC = () => {
             </motion.span>
             <br />
             <motion.span 
-              className="text-primary glow inline-block"
+              className="text-primary inline-block"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}

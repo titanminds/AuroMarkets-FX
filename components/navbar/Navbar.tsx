@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   HiOutlineSearch,
   HiMenuAlt3,
@@ -70,18 +71,28 @@ const Navbar = () => {
       {/* Main Navigation Bar */}
       <div className="px-4 sm:px-6 lg:px-16">
         <div className="max-w-7xl mx-auto flex justify-between items-center h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo - Switches based on scroll state */}
           <motion.a
             href="/"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="shrink-0"
           >
-            <img
-              src="/assets/images/Logo.png"
-              alt="Logo"
-              className="h-14 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
-            />
+            {scrolled ? (
+              // Black logo when scrolled
+              <img
+                src="/assets/images/Logo.png"
+                alt="Logo"
+                className="h-14 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
+              />
+            ) : (
+              // White logo when transparent
+              <img
+                src="/assets/images/whitelogo.png"
+                alt="Logo"
+                className="h-14 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
+              />
+            )}
           </motion.a>
 
           {/* Desktop Navigation - Links arranged as requested */}
@@ -186,8 +197,24 @@ const Navbar = () => {
               }}
               className="fixed left-0 right-0 bg-white lg:hidden shadow-2xl rounded-b-3xl overflow-hidden"
             >
+              {/* Menu Header with Logo */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-100">
+                <img
+                  src="/assets/images/Logo-black.png"
+                  alt="Logo"
+                  className="h-10 w-auto object-contain"
+                />
+                <motion.button
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors"
+                >
+                  <HiX size={24} />
+                </motion.button>
+              </div>
+
               {/* Menu Content */}
-              <div className="max-h-[calc(100vh-120px)] overflow-y-auto px-6 py-4 mt-5">
+              <div className="max-h-[calc(100vh-180px)] overflow-y-auto px-6 py-4">
                 {/* Navigation Links */}
                 <div className="space-y-1 mb-6">
                   {navLinks.map((link, index) => (
