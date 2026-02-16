@@ -330,7 +330,7 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.8 }}>
-            {["FCA regulated", "24/7 AI risk", "ultra-low latency"].map(
+            {[ "24/7 AI risk", "ultra-low latency"].map(
               (item, index) => (
                 <motion.span
                   key={item}
