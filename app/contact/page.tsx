@@ -9,7 +9,7 @@ const Contact = () => {
        <PageHero
         title="Contact Us"
         description="If you have any Questions , Concerns or Feedback, Dont Hesitate to Contact Us. We are Committed to Responding to all inquires in a timely and Professional Manner."
-        backgroundImage="https://jan.coderdemo.com/newwp/bullion/wp-content/uploads/2023/03/page-title.jpg"
+        backgroundImage="https://static.vecteezy.com/system/resources/thumbnails/052/042/795/small/trading-forex-gold-or-xauusd-char-growth-up-profit-in-bullish-market-vector.jpg"
         breadcrumbs={[{ label: "Home" }, { label: "Contact" }]}
       />
       <ContactSection />

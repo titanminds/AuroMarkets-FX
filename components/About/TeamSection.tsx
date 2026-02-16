@@ -369,7 +369,7 @@ const TeamSection = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url("https://capitalfxglobal.com/wp-content/uploads/2023/03/benefits-bg-1.jpg")',
+              'url("https://w0.peakpx.com/wallpaper/139/711/HD-wallpaper-financial-stock-market-graph-on-stock-market-investment-trading-bullish-point-bearish-point-trend-of-graph-for-business-idea-and-all-art-work-design-vector-illustration-5299428-vector-art-at-vecteezy.jpg")',
             backgroundAttachment: "fixed",
           }}
         />

@@ -252,7 +252,7 @@ const DownloadSection = () => {
 
                   {/* Actual Image - Replace with your image path */}
                   <Image
-                    src="/assets/images/twophones.png"
+                    src="/assets/images/phone2.png"
                     alt="AuroMarkets FX Mobile App Interface"
                     fill
                     className="object-contain object-center"

@@ -27,8 +27,6 @@ import {
 
 interface NodeProps {
   label: string
-  items: { name: string; icon?: React.ReactNode }[]
-  count: string
   className: string
   align?: "left" | "right" | "center"
   index: number
@@ -38,8 +36,6 @@ interface NodeProps {
 
 const Node = ({
   label,
-  items,
-  count,
   className,
   align = "center",
   index,
@@ -53,41 +49,20 @@ const Node = ({
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: index * 0.1 }}
-      className={`absolute flex flex-col ${align === "left" ? "items-start" : align === "right" ? "items-end" : "items-center"} gap-3 ${className} ${isMobile ? "relative !static" : ""}`}
+      className={`absolute flex flex-col ${align === "left" ? "items-start" : align === "right" ? "items-end" : "items-center"} ${className} ${isMobile ? "relative !static" : ""}`}
       onMouseEnter={() => !isMobile && setIsHovered(true)}
       onMouseLeave={() => !isMobile && setIsHovered(false)}>
-      <motion.span
-        animate={isHovered ? { y: -5 } : {}}
-        className="text-[10px] font-bold text-gray-400 tracking-[0.2em] uppercase px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm flex items-center gap-2 border border-mate/10">
-        {icon}
-        {label}
-      </motion.span>
       <motion.div
         animate={
           isHovered
-            ? { scale: 1.05, boxShadow: "0 10px 40px rgba(255, 174, 0, 0.2)" }
+            ? { scale: 1.1, y: -5, boxShadow: "0 10px 40px rgba(255, 174, 0, 0.25)" }
             : {}
         }
-        className="flex items-center gap-2 bg-background border border-primary/20 shadow-sm p-1 rounded-full hover:shadow-md transition-all backdrop-blur-sm">
-        <div className="flex items-center gap-1 px-2">
-          {items.slice(0, isMobile ? 2 : 3).map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/5 to-background border border-primary/20 text-[10px] font-bold text-foreground flex items-center gap-2">
-              {item.icon}
-              {item.name}
-            </motion.div>
-          ))}
-        </div>
-        <motion.div
-          whileHover={{ rotate: 360 }}
-          transition={{ duration: 0.5 }}
-          className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary flex items-center justify-center text-[10px] font-bold text-background shadow-lg">
-          {count}
-        </motion.div>
+        className="flex items-center gap-3 bg-background/90 backdrop-blur-sm border border-primary/20 shadow-md px-4 py-2.5 rounded-full hover:shadow-xl transition-all">
+        <span className="text-primary">{icon}</span>
+        <span className="text-sm font-semibold text-foreground tracking-wide uppercase">
+          {label}
+        </span>
       </motion.div>
     </motion.div>
   )
@@ -112,144 +87,41 @@ export default function Ecosystem() {
   const mobileNodes = [
     {
       label: "Registration",
-      items: [
-        {
-          name: "sumsub",
-          icon: <FaMobileAlt className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "ShuftiPro",
-          icon: <FaMobileAlt className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "muinmos",
-          icon: <FaMobileAlt className="w-3 h-3 text-primary" />,
-        },
-      ],
-      count: "+6",
       icon: <FaMobileAlt className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
     {
       label: "Traders Tools",
-      items: [
-        { name: "B", icon: <FaRobot className="w-3 h-3 text-primary" /> },
-        {
-          name: "Brokeree",
-          icon: <FaRobot className="w-3 h-3 text-primary" />,
-        },
-      ],
-      count: "+8",
       icon: <FaRobot className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
     {
       label: "Payments",
-      items: [
-        {
-          name: "Praxis",
-          icon: <FaCreditCard className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "Bridge",
-          icon: <FaCreditCard className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "nuvei",
-          icon: <FaCreditCard className="w-3 h-3 text-primary" />,
-        },
-      ],
-      count: "+250",
       icon: <FaCreditCard className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
     {
       label: "Platforms",
-      items: [
-        {
-          name: "MT4",
-          icon: <SiAmazonroute53 className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "MT5",
-          icon: <SiAmazonroute53 className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "cTrader",
-          icon: <SiAmazonroute53 className="w-3 h-3 text-primary" />,
-        },
-      ],
-      count: "+10",
       icon: <SiAmazonroute53 className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
     {
       label: "BI & Analytics",
-      items: [
-        {
-          name: "PowerBI",
-          icon: <SiAmazonroute53 className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "Tableau",
-          icon: <SiTableau className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "Looker",
-          icon: <SiGoogleanalytics className="w-3 h-3 text-primary" />,
-        },
-      ],
-      count: "+10",
       icon: <FaChartLine className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
     {
       label: "VOIP & Comms",
-      items: [
-        {
-          name: "VOISO",
-          icon: <FaMicrochip className="w-3 h-3 text-primary" />,
-        },
-        { name: "3CX", icon: <FaMicrochip className="w-3 h-3 text-primary" /> },
-        { name: "Twilio", icon: <SiTwilio className="w-3 h-3 text-primary" /> },
-      ],
-      count: "+12",
       icon: <FaMicrochip className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
     {
       label: "News & Signals",
-      items: [
-        {
-          name: "TradingView",
-          icon: <SiTradingview className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "Autochartist",
-          icon: <FaChartLine className="w-3 h-3 text-primary" />,
-        },
-      ],
-      count: "+7",
       icon: <FaNewspaper className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
     {
       label: "Marketing",
-      items: [
-        {
-          name: "Solytics",
-          icon: <FaBullhorn className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "Cellxpert",
-          icon: <FaBullhorn className="w-3 h-3 text-primary" />,
-        },
-        {
-          name: "Optimove",
-          icon: <FaBullhorn className="w-3 h-3 text-primary" />,
-        },
-      ],
-      count: "+5",
       icon: <FaBullhorn className="w-4 h-4 text-primary" />,
       gradient: "from-primary/10 via-primary/5 to-background",
     },
@@ -283,18 +155,9 @@ export default function Ecosystem() {
       icon: <FaBullhorn className="text-primary" />,
     },
   ]
-  // const dots = React.useMemo(() => {
-  //   return Array.from({ length: 20 }).map(() => ({
-  //     x: Math.random() * 100,
-  //     opacity: Math.random() * 0.5 + 0.1,
-  //     duration: Math.random() * 20 + 10,
-  //     delay: Math.random() * 10,
-  //   }))
-  // }, [])
+
   return (
     <section className="relative w-full py-8 lg:py-32 bg-[#f2f3f5] overflow-hidden font-sans">
-    
-
       {/* Header */}
       <div className="text-center mb-8 lg:mb-20 px-4 relative z-10">
         <motion.div
@@ -336,7 +199,7 @@ export default function Ecosystem() {
                 onClick={() => setActiveTab(category.id)}
                 className={`flex-shrink-0 flex items-center gap-2 px-4 py-3 rounded-full text-xs font-medium transition-all ${
                   activeTab === category.id
-                    ? "bg-gradient-to-r from-primary to-primary text-background shadow-lg"
+                    ? "bg-mate text-background shadow-lg"
                     : "bg-background text-foreground border border-primary/20 hover:border-primary"
                 }`}>
                 {category.icon}
@@ -386,7 +249,7 @@ export default function Ecosystem() {
             ))}
           </div>
 
-          {/* Mobile Grid - Interactive Cards */}
+          {/* Mobile Grid - Simplified Cards without numbers */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {(isExpanded ? mobileNodes : mobileNodes.slice(0, 6)).map(
               (node, index) => (
@@ -404,25 +267,10 @@ export default function Ecosystem() {
                       className={`p-3 rounded-xl bg-gradient-to-br ${node.gradient} border border-primary/10`}>
                       {node.icon}
                     </div>
-                    <motion.span
-                      whileHover={{ scale: 1.1 }}
-                      className="text-xs font-bold text-background bg-gradient-to-r from-primary to-primary px-3 py-1 rounded-full">
-                      {node.count}
-                    </motion.span>
                   </div>
-                  <h3 className="font-bold text-foreground mb-3">
+                  <h3 className="font-bold text-foreground text-sm">
                     {node.label}
                   </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {node.items.slice(0, 3).map((item, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1.5 text-xs font-medium bg-background border border-primary/20 rounded-full flex items-center gap-2 hover:border-primary transition-colors">
-                        {item.icon}
-                        {item.name}
-                      </span>
-                    ))}
-                  </div>
                   {hoveredNode === node.label && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
@@ -431,7 +279,7 @@ export default function Ecosystem() {
                       className="mt-4 pt-4 border-t border-primary/10">
                       <p className="text-xs text-mate flex items-center gap-2">
                         <FaCheckCircle className="text-primary w-3 h-3" />
-                        Seamlessly integrated with {node.count} solutions
+                        Fully integrated solution
                       </p>
                     </motion.div>
                   )}
@@ -463,7 +311,7 @@ export default function Ecosystem() {
             </div>
           )}
 
-          {/* Mobile Central Hub - Interactive */}
+          {/* Mobile Central Hub */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -487,34 +335,6 @@ export default function Ecosystem() {
                     className="h-20 w-auto object-contain"
                   />
                 </div>
-                {/* <div className="text-2xl sm:text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
-                  Auro<span className="text-primary">FX</span>
-                </div>
-                <p className="text-mate text-sm mb-6 flex items-center justify-center gap-2">
-                  <FaNetworkWired className="w-4 h-4 text-primary" />
-                  Central Integration Hub
-                </p>
-                <div className="flex justify-center items-end gap-1.5 h-16">
-                  {[3, 6, 4, 8, 5, 7, 4].map((height, i) => (
-                    <motion.div
-                      key={i}
-                      className="w-2 sm:w-2.5 rounded-full bg-gradient-to-t from-primary via-primary to-primary"
-                      animate={{
-                        height: [
-                          `${height * 4}px`,
-                          `${height * 7}px`,
-                          `${height * 4}px`,
-                        ],
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        delay: i * 0.1,
-                        ease: "easeInOut",
-                      }}
-                    />
-                  ))}
-                </div> */}
                 <div className="mt-6 grid grid-cols-3 gap-4 text-xs text-mate">
                   <div className="text-center">
                     <div className="font-bold text-primary">Real-time</div>
@@ -560,12 +380,12 @@ export default function Ecosystem() {
                   <stop
                     offset="0%"
                     stopColor="var(--primary)"
-                    stopOpacity="0.8"
+                    stopOpacity="0.6"
                   />
                   <stop
                     offset="100%"
                     stopColor="var(--primary)"
-                    stopOpacity="0.8"
+                    stopOpacity="0.6"
                   />
                 </linearGradient>
               </defs>
@@ -580,7 +400,7 @@ export default function Ecosystem() {
                   stroke="url(#gradient-ring)"
                   strokeWidth="1"
                   strokeDasharray="4 4"
-                  strokeOpacity={0.2 + i * 0.1}
+                  strokeOpacity={0.3 + i * 0.7}
                   initial={{ rotate: 0 }}
                   animate={{ rotate: 360 }}
                   transition={{
@@ -591,23 +411,32 @@ export default function Ecosystem() {
                 />
               ))}
 
-              {/* Connection Lines with Animation */}
+              {/* Connection Lines - All 8 nodes have pointing lines */}
               {[
-                { d: "M600,190 L600,140", id: 1 },
-                { d: "M600,410 L600,460", id: 2 },
+                // Top - Registration
+                { d: "M601,101 L600,281", id: 1 },
+                // Bottom - Marketing
+                { d: "M601,501 L600,281", id: 2 },
+                // Top Left - Traders Tools
                 { d: "M490,260 Q400,260 350,180", id: 3 },
-                { d: "M460,300 L350,300", id: 4 },
+                // Middle Left - Payments
+                { d: "M540,301 L340,300", id: 4 },
+                // Bottom Left - Platforms
                 { d: "M490,340 Q400,340 350,420", id: 5 },
+                // Top Right - BI & Analytics
                 { d: "M710,260 Q800,260 850,180", id: 6 },
-                { d: "M740,300 L850,300", id: 7 },
+                // Middle Right - VOIP & Comms
+                { d: "M540,301 L850,300", id: 7 },
+                // Bottom Right - News & Signals
                 { d: "M710,340 Q800,340 850,420", id: 8 },
               ].map((line) => (
                 <motion.path
                   key={line.id}
                   d={line.d}
                   stroke="url(#gradient-line)"
-                  strokeWidth="1.5"
-                  strokeOpacity="0.6"
+                  strokeWidth="1.2"
+                  strokeOpacity="0.9"
+                  strokeDasharray="5 5"
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
                   transition={{
@@ -635,32 +464,8 @@ export default function Ecosystem() {
                 duration: 10,
                 repeat: Infinity,
               }}
-              className="relative w-48 h-48 rounded-full border-8 border-transparent bg-gradient-to-r from-primary via-primary to-primary p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center p-8">
-                {/* <div className="text-3xl font-bold tracking-tighter text-foreground">
-                  Auro<span className="text-primary">FX</span>
-                </div>
-                <div className="flex items-end gap-1.5 mt-4">
-                  {[3, 6, 4, 8, 5, 7, 4].map((height, i) => (
-                    <motion.div
-                      key={i}
-                      className="w-2 bg-gradient-to-t from-primary via-primary to-primary rounded-full"
-                      animate={{
-                        height: [
-                          `${height * 4}px`,
-                          `${height * 7}px`,
-                          `${height * 4}px`,
-                        ],
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        delay: i * 0.1,
-                        ease: "easeInOut",
-                      }}
-                    />
-                  ))}
-                </div> */}
+              className="relative w-48 h-48 rounded-full border-8 border-transparent bg-gradient-to-r from-primary via-primary to-primary/90 p-1 shadow-2xl">
+              <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center p-8 backdrop-blur-sm">
                 <div className="shrink-0">
                   <img
                     src="/assets/images/Logo.png"
@@ -672,74 +477,58 @@ export default function Ecosystem() {
             </motion.div>
           </motion.div>
 
-          {/* Desktop Nodes */}
+          {/* Desktop Nodes - Only show tags without numbers */}
           <Node
             label="Registration"
-            items={mobileNodes[0].items}
-            count="+6"
-            className="top-0 left-1/2 -translate-x-1/2"
+            className="top-10 left-1/2 -translate-x-1/2"
             index={0}
             icon={mobileNodes[0].icon}
           />
           <Node
             label="Traders Tools"
-            items={mobileNodes[1].items}
-            count="+8"
-            className="top-24 left-32"
+            className="top-30 left-52"
             align="left"
             index={1}
             icon={mobileNodes[1].icon}
           />
           <Node
             label="Payments"
-            items={mobileNodes[2].items}
-            count="+250"
-            className="top-1/2 left-20 -translate-y-1/2"
+            className="top-1/2 left-48 -translate-y-1/2"
             align="left"
             index={2}
             icon={mobileNodes[2].icon}
           />
           <Node
             label="Platforms"
-            items={mobileNodes[3].items}
-            count="+10"
-            className="bottom-24 left-32"
+            className="bottom-32 left-54"
             align="left"
             index={3}
             icon={mobileNodes[3].icon}
           />
           <Node
             label="BI & Analytics"
-            items={mobileNodes[4].items}
-            count="+10"
-            className="top-24 right-32"
+            className="top-30 right-52"
             align="right"
             index={4}
             icon={mobileNodes[4].icon}
           />
           <Node
             label="VOIP & Comms"
-            items={mobileNodes[5].items}
-            count="+12"
-            className="top-1/2 right-20 -translate-y-1/2"
+            className="top-1/2 right-44 -translate-y-1/2"
             align="right"
             index={5}
             icon={mobileNodes[5].icon}
           />
           <Node
             label="News & Signals"
-            items={mobileNodes[6].items}
-            count="+7"
-            className="bottom-24 right-32"
+            className="bottom-30 right-52"
             align="right"
             index={6}
             icon={mobileNodes[6].icon}
           />
           <Node
             label="Marketing"
-            items={mobileNodes[7].items}
-            count="+5"
-            className="bottom-0 left-1/2 -translate-x-1/2"
+            className="bottom-10 left-1/2 -translate-x-1/2"
             index={7}
             icon={mobileNodes[7].icon}
           />

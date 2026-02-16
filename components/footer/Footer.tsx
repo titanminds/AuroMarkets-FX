@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
             Brokerage's Potential?
           </h1>
           <p className="mb-8 text-center text-sm font-medium text-mate/50 max-w-md">
-            Contact us and make the switch to Vertex or HS Trader today!
+            Contact us and make the switch to Vertex or Meta Trader today!
           </p>
 
           {/* CTA Button */}
@@ -460,7 +460,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="text-center md:text-left"
             >
-              © {new Date().getFullYear()} AuroMarkets FXmarkets. All Rights Reserved.
+              © {new Date().getFullYear()} AuroMarkets FX. All Rights Reserved.
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}

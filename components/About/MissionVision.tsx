@@ -6,6 +6,9 @@ import {
   FiAward,
   FiChevronRight,
   FiGlobe,
+  FiTrendingUp,
+  FiShield,
+  FiUsers,
 } from "react-icons/fi"
 import { useRef } from "react"
 
@@ -17,31 +20,49 @@ export default function MissionVision() {
       icon: FiTarget,
       title: "Our Mission",
       description:
-        "To empower brokerage companies with cutting-edge CRM solutions and white-label websites that streamline operations and drive growth.",
+        "To empower traders of all levels with transparent access to global financial markets, providing cutting-edge technology, competitive spreads, and exceptional support.",
       gradient: "from-primary to-mate",
       color: "from-primary to-mate",
       items: [
-        "Simplify complex workflows",
-        "Enhance client relationships",
-        "Boost operational efficiency",
-        "Drive sustainable growth",
+        "Democratize access to forex trading",
+        "Provide institutional-grade tools for retail traders",
+        "Ensure transparent and fair trading conditions",
+        "Empower traders with education and insights",
       ],
-      stats: "250+ Companies Empowered",
+      stats: "$2B+ Monthly Trading Volume",
     },
     {
       icon: FiEye,
       title: "Our Vision",
       description:
-        "To become the global leader in brokerage technology solutions, setting new standards for innovation, reliability, and client success.",
+        "To become the most trusted and innovative forex broker in emerging markets, bridging the gap between local traders and global financial opportunities.",
       gradient: "from-primary to-mate",
       color: "from-primary to-mate",
       items: [
-        "Global market leadership",
-        "Continuous innovation",
-        "Industry standard setting",
-        "Unmatched client success",
+        "Leading broker in MENA region",
+        "Pioneer in Islamic trading accounts",
+        "Set new standards for broker transparency",
+        "Create a community of successful traders",
       ],
-      stats: "35+ Countries Served",
+      stats: "50,000+ Active Traders",
+    },
+  ]
+
+  const values = [
+    {
+      icon: FiShield,
+      title: "Trust & Security",
+      description: "Segregated client funds and regulated operations",
+    },
+    {
+      icon: FiTrendingUp,
+      title: "Market Access",
+      description: "60+ currency pairs, commodities, and indices",
+    },
+    {
+      icon: FiUsers,
+      title: "Client-Centric",
+      description: "24/7 multilingual support and personal account managers",
     },
   ]
 
@@ -49,9 +70,9 @@ export default function MissionVision() {
     <section className="py-24 relative overflow-hidden bg-background">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Black and White background image */}
+        {/* Financial Market Background */}
         <div
-          className="absolute inset-0 opacity-30 pointer-events-none"
+          className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
             backgroundImage: `url('https://static.vecteezy.com/system/resources/thumbnails/022/659/642/small/3d-growth-stock-diagram-financial-graph-isolated-on-transparent-background-business-candlestick-chart-investment-market-trade-exchange-analysis-and-economy-finance-report-png.png')`,
             backgroundPosition: "center",
@@ -59,6 +80,14 @@ export default function MissionVision() {
             filter: "grayscale(100%)",
           }}
         />
+        
+        {/* Animated Candlesticks Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-1 h-16 bg-primary/20 rotate-12"></div>
+          <div className="absolute top-40 right-20 w-1 h-24 bg-primary/20 -rotate-12"></div>
+          <div className="absolute bottom-20 left-1/4 w-1 h-20 bg-primary/20 rotate-45"></div>
+          <div className="absolute bottom-40 right-1/3 w-1 h-32 bg-primary/20 -rotate-45"></div>
+        </div>
       </div>
 
       <div
@@ -74,19 +103,43 @@ export default function MissionVision() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-black/10 mb-6">
             <FiGlobe className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-white/80">
-              Global Impact
+              AuroMarkets FX - Your Trusted Broker
             </span>
           </div>
 
-          
-           <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-primary">Mission </span>& Vision
           </h2>
 
           <p className="text-lg md:text-xl text-mate max-w-3xl mx-auto leading-relaxed">
-            Driving innovation in brokerage technology to create seamless
-            experiences for brokers and their clients worldwide.
+            Building a bridge between ambitious traders and global forex markets
+            through technology, transparency, and trust.
           </p>
+        </motion.div>
+
+        {/* Core Values Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-6 mb-16">
+          {values.map((value, index) => (
+            <motion.div
+              key={value.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white/50 backdrop-blur-sm border border-black/5 rounded-xl p-6 text-center hover:border-primary/20 transition-all hover:-translate-y-1"
+            >
+              <div className="inline-flex p-3 rounded-full bg-primary/10 mb-3">
+                <value.icon className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="font-semibold text-black mb-1">{value.title}</h3>
+              <p className="text-sm text-mate">{value.description}</p>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Cards Grid */}
@@ -189,6 +242,22 @@ export default function MissionVision() {
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom Trust Badge */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <div className="inline-flex items-center gap-4 px-6 py-3 bg-white border border-black/10 rounded-full">
+            <FiAward className="w-5 h-5 text-primary" />
+            <span className="text-sm text-mate">
+              Regulated Broker | Segregated Accounts | Negative Balance Protection
+            </span>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

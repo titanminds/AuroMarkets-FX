@@ -1,3 +1,4 @@
+"use client"
 import React from "react"
 import {
   BiGlobe,
@@ -10,6 +11,38 @@ import { BsArrowUpRight } from "react-icons/bs"
 import { CgMail } from "react-icons/cg"
 
 const ContactSection = () => {
+  const whatsappNumber = ""
+  const whatsappMessage =
+    "Hello! I'm interested in learning more about AuroMarkets FX."
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+
+  const handleWhatsAppClick = () => {
+    window.open(whatsappUrl, "_blank")
+  }
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:info@auromarketsfx.com"
+  }
+
+  const handleLiveChatClick = () => {
+    // You can replace this with your actual live chat integration
+    window.open(whatsappUrl, "_blank") // For now, redirect to WhatsApp
+  }
+
+  const handleGoogleMapClick = () => {
+    // UK Office Google Maps link
+    const ukOfficeMaps =
+      "https://maps.google.com/?q=114+Lowbrook+road+Ilford+London+IG1+2HJ+United+Kingdom"
+    window.open(ukOfficeMaps, "_blank")
+  }
+
+  const handleUAEMapClick = () => {
+    // UAE Office Google Maps link
+    const uaeOfficeMaps =
+      "https://maps.google.com/?q=Block+C+VLO3-178+STRIP+Sharjah+UAE"
+    window.open(uaeOfficeMaps, "_blank")
+  }
+
   return (
     <div className="relative bg-background overflow-hidden font-sans">
       {/* Background Image Container */}
@@ -37,9 +70,9 @@ const ContactSection = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Request Call Back Card */}
-            <div className="bg-white p-12 rounded-lg shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-              <div className="bg-red-50 p-4 rounded-full mb-6">
+            {/* Request Call Back Card - Now opens WhatsApp */}
+            <div className="bg-white p-12 rounded-lg shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center text-center transition-all hover:-translate-y-1 hover:shadow-xl group">
+              <div className="bg-red-50 p-4 rounded-full mb-6 group-hover:bg-primary/10 transition-colors">
                 <BiPhoneCall className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-extrabold mb-2 text-slate-800">
@@ -48,14 +81,19 @@ const ContactSection = () => {
               <p className="text-gray-400 mb-6 text-sm">
                 Just Share your ph num, we will back.
               </p>
-              <button className="flex items-center gap-2 font-bold text-sm text-slate-900 border-b-2 border-transparent hover:border-primary transition-all">
-                 Call<BsArrowUpRight className="w-4 h-4" />
-              </button>
+              <a
+                href="tel:+"
+                className="flex items-center gap-2 cursor-pointer font-bold text-sm text-slate-900 border-b-2 border-transparent hover:border-primary transition-all group">
+                Call Us{" "}
+                <BsArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </a>
             </div>
 
-            {/* Live Chat Card */}
-            <div className="bg-white p-12 rounded-lg shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-              <div className="bg-red-50 p-4 rounded-full mb-6">
+            {/* Live Chat Card - Now opens WhatsApp */}
+            <div
+              onClick={handleLiveChatClick}
+              className="bg-white p-12 rounded-lg shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col items-center text-center transition-all hover:-translate-y-1 hover:shadow-xl cursor-pointer group">
+              <div className="bg-red-50 p-4 rounded-full mb-6 group-hover:bg-primary/10 transition-colors">
                 <BiMessageSquare className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-extrabold mb-2 text-slate-800">
@@ -64,8 +102,9 @@ const ContactSection = () => {
               <p className="text-gray-400 mb-6 text-sm">
                 Chat live with our forex specialist.
               </p>
-              <button className="flex items-center gap-2 font-bold text-sm text-slate-900 border-b-2 border-transparent hover:border-primary transition-all">
-                Start Chat <BsArrowUpRight className="w-4 h-4" />
+              <button className="flex items-center gap-2 cursor-pointer font-bold text-sm text-slate-900 border-b-2 border-transparent hover:border-primary transition-all">
+                Start Chat{" "}
+                <BsArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -76,32 +115,34 @@ const ContactSection = () => {
           <h2 className="text-xl font-bold mb-10">UK Office</h2>
 
           <div className="space-y-8">
-            <div className="flex gap-5">
-              <div className="bg-gray-700/50 p-2 rounded-full h-fit">
-                <BiMapPin className="w-5 h-5 text-gray-300" />
+            {/* UK Office Address - Clickable for Google Maps */}
+            <div
+              onClick={handleGoogleMapClick}
+              className="flex gap-5 cursor-pointer group">
+              <div className="bg-gray-700/50 p-2 rounded-full h-fit group-hover:bg-primary/20 transition-colors">
+                <BiMapPin className="w-5 h-5 text-gray-300 group-hover:text-primary transition-colors" />
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                AuroMarkets FX UK LTD 114 Lowbrook road Ilford, London IG1 2HJ United
-                Kingdom
+              <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
+                AuroMarkets FX UK LTD 114 Lowbrook road Ilford, London IG1 2HJ
+                United Kingdom
               </p>
             </div>
 
-            {/* <div className="flex gap-5 items-center">
-              <div className="bg-gray-700/50 p-2 rounded-full">
-                <BiPhone className="w-5 h-5 text-gray-300" />
+            {/* Email - Clickable */}
+            <div
+              onClick={handleEmailClick}
+              className="flex gap-5 items-center cursor-pointer group">
+              <div className="bg-gray-700/50 p-2 rounded-full group-hover:bg-primary/20 transition-colors">
+                <CgMail className="w-5 h-5 text-gray-300 group-hover:text-primary transition-colors" />
               </div>
-              <p className="text-gray-400 text-sm">+971-586856256</p>
-            </div> */}
-
-            <div className="flex gap-5 items-center">
-              <div className="bg-gray-700/50 p-2 rounded-full">
-                <CgMail className="w-5 h-5 text-gray-300" />
-              </div>
-              <p className="text-gray-400 text-sm">info@auromarketsfx.com</p>
+              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+                info@auromarketsfx.com
+              </p>
             </div>
 
             <hr className="border-gray-800" />
 
+            {/* UAE Office Header */}
             <div className="flex gap-5 items-center">
               <div className="bg-gray-700/50 p-2 rounded-full">
                 <BiGlobe className="w-5 h-5 text-gray-300" />
@@ -109,17 +150,23 @@ const ContactSection = () => {
               <p className="text-gray-100 font-bold">UAE Office</p>
             </div>
 
-            <div className="flex gap-5">
-              <div className="bg-gray-700/50 p-2 rounded-full h-fit">
-                <BiMapPin className="w-5 h-5 text-gray-300" />
+            {/* UAE Office Address - Clickable for Google Maps */}
+            <div
+              onClick={handleUAEMapClick}
+              className="flex gap-5 cursor-pointer group">
+              <div className="bg-gray-700/50 p-2 rounded-full h-fit group-hover:bg-primary/20 transition-colors">
+                <BiMapPin className="w-5 h-5 text-gray-300 group-hover:text-primary transition-colors" />
               </div>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
                 Block C VLO3-178 STRIP, Sharjah, UAE
               </p>
             </div>
           </div>
 
-          <button className="w-full mt-12 py-4 border border-primary rounded-md flex items-center justify-center gap-3 hover:bg-primary transition-all text-sm font-bold group">
+          {/* View on Google Map Button */}
+          <button
+            onClick={handleGoogleMapClick}
+            className="w-full mt-12 py-4 border border-primary rounded-md flex items-center justify-center gap-3 hover:bg-primary transition-all text-sm font-bold group">
             View On Google Map
             <BsArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </button>

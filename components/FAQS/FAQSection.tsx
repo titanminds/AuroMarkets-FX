@@ -1,24 +1,23 @@
 "use client"
 import Link from "next/link"
 import React, { useState } from "react"
+import { motion, AnimatePresence, Variants } from "framer-motion"
 import {
   BiChevronDown,
   BiChevronUp,
   BiSearch,
   BiHelpCircle,
-  BiMessageDetail,
-  BiPhone,
-  BiEnvelope,
   BiChat,
 } from "react-icons/bi"
 import { BsArrowUpRight } from "react-icons/bs"
 
-// FAQ Item Component
+// FAQ Item Component with smoother animations
 interface FAQItemProps {
   question: string
   answer: string
   isOpen: boolean
   toggle: () => void
+  index: number
 }
 
 const FAQItem: React.FC<FAQItemProps> = ({
@@ -26,79 +25,79 @@ const FAQItem: React.FC<FAQItemProps> = ({
   answer,
   isOpen,
   toggle,
-}) => {
-  return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden hover:border-primary/30 transition-all duration-300">
-      <button
-        onClick={toggle}
-        className="w-full p-6 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors">
-        <h3 className="text-lg font-semibold text-foreground pr-4">
-          {question}
-        </h3>
-        <div className="flex-shrink-0">
-          {isOpen ? (
-            <BiChevronUp className="w-6 h-6 text-primary" />
-          ) : (
-            <BiChevronDown className="w-6 h-6 text-gray-400" />
-          )}
-        </div>
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6 border-t border-gray-100 pt-4 bg-white">
-          <p className="text-gray-600 leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
-  )
-}
-
-// FAQ Category Component
-interface FAQCategoryProps {
-  title: string
-  icon: React.ReactNode
-  items: number
-  activeCategory: number
-  setActiveCategory: (index: number) => void
-  index: number
-}
-
-const FAQCategory: React.FC<FAQCategoryProps> = ({
-  title,
-  icon,
-  items,
-  activeCategory,
-  setActiveCategory,
   index,
 }) => {
   return (
-    <button
-      onClick={() => setActiveCategory(index)}
-      className={`p-6 rounded-xl text-left transition-all duration-300 ${
-        activeCategory === index
-          ? "bg-primary text-white shadow-lg shadow-primary/20"
-          : "bg-white border border-gray-200 hover:border-primary/30 hover:shadow-md"
-      }`}>
-      <div className="flex items-center gap-4 mb-3">
-        <div
-          className={`p-3 rounded-lg ${
-            activeCategory === index ? "bg-white/20" : "bg-primary/10"
-          }`}>
-          {icon}
-        </div>
-        <h3
-          className={`text-xl font-bold ${
-            activeCategory === index ? "text-white" : "text-foreground"
-          }`}>
-          {title}
-        </h3>
-      </div>
-      <p
-        className={`text-sm ${
-          activeCategory === index ? "text-white/90" : "text-gray-600"
-        }`}>
-        {items} frequently asked questions
-      </p>
-    </button>
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.4, 
+        delay: index * 0.03,
+        ease: [0.25, 0.1, 0.25, 1] // Cubic bezier for smoother easing
+      }}
+      className="border border-gray-200 rounded-lg overflow-hidden"
+    >
+      <button
+        onClick={toggle}
+        className="w-full p-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors duration-200"
+      >
+        <h3 className="text-base font-medium text-foreground pr-4">{question}</h3>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ 
+            duration: 0.3,
+            ease: [0.25, 0.1, 0.25, 1],
+            type: "tween"
+          }}
+        >
+          {isOpen ? (
+            <BiChevronUp className="w-5 h-5 text-primary" />
+          ) : (
+            <BiChevronDown className="w-5 h-5 text-gray-400" />
+          )}
+        </motion.div>
+      </button>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ 
+              height: "auto", 
+              opacity: 1,
+              transition: {
+                height: {
+                  duration: 0.4,
+                  ease: [0.25, 0.1, 0.25, 1]
+                },
+                opacity: {
+                  duration: 0.3,
+                  delay: 0.1
+                }
+              }
+            }}
+            exit={{ 
+              height: 0, 
+              opacity: 0,
+              transition: {
+                height: {
+                  duration: 0.3,
+                  ease: [0.25, 0.1, 0.25, 1]
+                },
+                opacity: {
+                  duration: 0.2
+                }
+              }
+            }}
+            className="overflow-hidden"
+          >
+            <div className="px-4 pb-4 bg-white">
+              <p className="text-sm text-gray-600">{answer}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   )
 }
 
@@ -113,303 +112,339 @@ const FAQSearch: React.FC<FAQSearchProps> = ({
   setSearchQuery,
 }) => {
   return (
-    <div className="relative max-w-2xl mx-auto">
-      <BiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
+      className="relative max-w-xl mx-auto"
+    >
+      <BiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
       <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search for questions..."
-        className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all bg-white text-foreground shadow-sm"
+        placeholder="Search questions..."
+        className="w-full pl-9 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white text-foreground text-sm transition-all duration-200"
       />
-    </div>
+    </motion.div>
   )
 }
 
-// Contact Card Component
+// Contact Card Component with smoother animations
 const ContactCard: React.FC = () => {
   return (
-    <div className="bg-gradient-to-br from-mate to-black text-white rounded-2xl p-8 shadow-xl">
-      <div className="flex items-center gap-4 mb-6">
-        <div className="p-3 bg-primary/20 rounded-xl">
-          <BiHelpCircle className="w-8 h-8 text-primary" />
-        </div>
-        <div>
-          <h3 className="text-2xl font-bold">Still Have Questions?</h3>
-          <p className="text-gray-300">Can't find what you're looking for?</p>
-        </div>
-      </div>
-
-      <div className="space-y-6">
-        {/* <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
-          <div className="p-2 bg-primary/20 rounded-lg">
-            <BiPhone className="w-5 h-5 text-primary" />
+    <motion.div 
+      initial={{ opacity: 0, x: 15 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ 
+        duration: 0.6,
+        delay: 0.15,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
+      className="bg-mate text-white rounded-lg p-6"
+    >
+      <motion.h3 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.25, duration: 0.4 }}
+        className="text-lg font-semibold mb-1"
+      >
+        Still have questions?
+      </motion.h3>
+      <motion.p 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.4 }}
+        className="text-sm text-gray-400 mb-4"
+      >
+        We're here to help 24/7
+      </motion.p>
+      
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.35, duration: 0.4 }}
+        className="space-y-3 mb-4"
+      >
+        <motion.div 
+          whileHover={{ x: 5 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="flex items-center gap-3"
+        >
+          <div className="bg-black/30 p-2 rounded">
+            <BiChat className="w-4 h-4 text-primary" />
           </div>
           <div>
-            <h4 className="font-semibold">Call Support</h4>
-            <p className="text-gray-300 text-sm">+971-586856256</p>
+            <p className="text-sm font-medium">Live Chat</p>
+            <p className="text-xs text-gray-400">Instant response</p>
           </div>
-        </div> */}
+        </motion.div>
+      </motion.div>
 
-        <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
-          <div className="p-2 bg-primary/20 rounded-lg">
-            <BiChat className="w-5 h-5 text-primary" />
-          </div>
-          <div>
-            <h4 className="font-semibold">Live Chat</h4>
-            <p className="text-gray-300 text-sm">Available 24/7</p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors overflow-hidden">
-          <div className="p-2 bg-primary/20 rounded-lg">
-            <BiEnvelope className="w-5 h-5 text-primary" />
-          </div>
-          <div>
-            <h4 className="font-semibold">Email Us</h4>
-            <a href="mailto:info@auromarketsfx.com" className="text-gray-300 text-sm">info@auromarketsfx.com</a>
-          </div>
-        </div>
-      </div>
-
-      <Link href="/contact" className="w-full mt-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group">
-        Contact Support
-        <BsArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-      </Link>
-    </div>
+      <motion.div
+        whileHover={{ x: 5 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      >
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors duration-200"
+        >
+          Contact support
+          <motion.div
+            animate={{ x: [0, 3, 0] }}
+            transition={{ 
+              duration: 2, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              repeatType: "loop"
+            }}
+          >
+            <BsArrowUpRight className="w-3 h-3" />
+          </motion.div>
+        </Link>
+      </motion.div>
+    </motion.div>
   )
 }
 
-// FAQ Category Type
-interface FAQCategoryType {
-  title: string
-  icon: React.ReactNode
-  items: number
-  faqs: Array<{
-    question: string
-    answer: string
-  }>
+// Stat Card Component with smoother animation
+interface StatCardProps {
+  value: string
+  label: string
+  delay: number
+}
+
+const StatCard: React.FC<StatCardProps> = ({ value, label, delay }) => {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.5, 
+        delay,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
+      whileHover={{ 
+        y: -3, 
+        boxShadow: "0 6px 16px rgba(0,0,0,0.05)",
+        transition: { duration: 0.2 }
+      }}
+      className="bg-white border border-gray-200 rounded-lg p-4 text-center"
+    >
+      <motion.div 
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ 
+          delay: delay + 0.15, 
+          duration: 0.4,
+          ease: [0.25, 0.1, 0.25, 1]
+        }}
+        className="text-xl font-semibold text-primary"
+      >
+        {value}
+      </motion.div>
+      <div className="text-xs text-gray-500 mt-1">{label}</div>
+    </motion.div>
+  )
 }
 
 // Main FAQ Component
 const FAQSection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<number>(0)
   const [openIndex, setOpenIndex] = useState<number | null>(0)
   const [searchQuery, setSearchQuery] = useState<string>("")
 
-  // FAQ Data
-  const faqCategories: FAQCategoryType[] = [
+  // All FAQs combined
+  const allFaqs = [
     {
-      title: "General Questions",
-      icon: <BiHelpCircle className="w-6 h-6 text-primary" />,
-      items: 8,
-      faqs: [
-        {
-          question: "What is AuroMarkets FX Global and what services do you offer?",
-          answer:
-            "AuroMarkets FX Global is a leading forex trading platform offering comprehensive trading solutions including currency trading, CFDs, commodities, and indices. We provide advanced trading tools, educational resources, and 24/7 customer support to help traders succeed in the financial markets.",
-        },
-        {
-          question: "Is AuroMarkets FX Global regulated?",
-          answer:
-            "Yes, AuroMarkets FX Global is fully regulated and licensed under international financial authorities. We adhere to strict regulatory standards ensuring the safety and security of our clients' funds and personal information.",
-        },
-        {
-          question: "How do I open a trading account?",
-          answer:
-            "Opening an account is simple. Click the 'Sign Up' button on our website, fill in your personal details, verify your identity through our secure KYC process, and fund your account to start trading. The entire process takes less than 10 minutes.",
-        },
-        {
-          question: "What trading platforms do you offer?",
-          answer:
-            "We offer multiple trading platforms including MetaTrader 4, MetaTrader 5, and our proprietary web-based platform. All platforms are available on desktop, web, and mobile devices.",
-        },
-      ],
+      question: "What is AuroMarkets FX Global?",
+      answer: "AuroMarkets FX Global is a forex trading platform offering currency trading, CFDs, commodities, and indices with 24/7 support.",
     },
     {
-      title: "Account & Deposits",
-      icon: <BiMessageDetail className="w-6 h-6 text-primary" />,
-      items: 6,
-      faqs: [
-        {
-          question: "What is the minimum deposit required?",
-          answer:
-            "The minimum deposit varies by account type. For our Basic account, the minimum deposit is $250. For Premium and VIP accounts, minimum deposits are $5,000 and $25,000 respectively.",
-        },
-        {
-          question: "What payment methods do you accept?",
-          answer:
-            "We accept various payment methods including bank wire transfers, credit/debit cards (Visa, MasterCard), e-wallets (Skrill, Neteller, PayPal), and cryptocurrency transfers.",
-        },
-        {
-          question: "How long do deposits take to process?",
-          answer:
-            "Most deposits are instant. Credit/debit card deposits and e-wallets are processed immediately. Bank wire transfers typically take 1-3 business days depending on your bank.",
-        },
-      ],
+      question: "Is AuroMarkets FX Global regulated?",
+      answer: "Yes, we are fully regulated and licensed under international financial authorities.",
     },
     {
-      title: "Trading & Platforms",
-      icon: <BiChat className="w-6 h-6 text-primary" />,
-      items: 7,
-      faqs: [
-        {
-          question: "What leverage do you offer?",
-          answer:
-            "We offer flexible leverage up to 1:500 for professional clients and up to 1:30 for retail clients in accordance with regulatory requirements. The specific leverage depends on your account type and the instrument you're trading.",
-        },
-        {
-          question: "What are your trading hours?",
-          answer:
-            "Forex markets are open 24 hours a day, 5 days a week. Our trading hours for major currency pairs are from Sunday 10:00 PM GMT to Friday 10:00 PM GMT. Specific trading hours vary by instrument.",
-        },
-      ],
+      question: "How do I open an account?",
+      answer: "Click 'Sign Up', fill in your details, verify your identity, and fund your account. Takes less than 10 minutes.",
+    },
+    {
+      question: "What trading platforms do you offer?",
+      answer: "We offer MetaTrader 4, MetaTrader 5, and our web-based platform, all available on desktop and mobile.",
+    },
+    {
+      question: "What is the minimum deposit?",
+      answer: "Minimum deposit is $250 for Basic account, $5,000 for Premium, and $25,000 for VIP accounts.",
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer: "We accept bank wire, credit/debit cards (Visa, MasterCard), e-wallets (Skrill, Neteller), and crypto.",
+    },
+    {
+      question: "How long do deposits take?",
+      answer: "Card and e-wallet deposits are instant. Bank transfers take 1-3 business days.",
+    },
+    {
+      question: "What leverage do you offer?",
+      answer: "Leverage up to 1:500 for professional clients and up to 1:30 for retail clients, depending on account type.",
+    },
+    {
+      question: "What are your trading hours?",
+      answer: "Forex trading is available 24/5 from Sunday 10:00 PM GMT to Friday 10:00 PM GMT.",
+    },
+    {
+      question: "Do you offer a demo account?",
+      answer: "Yes, we offer free demo accounts with $50,000 virtual money to practice trading.",
+    },
+    {
+      question: "What are the withdrawal fees?",
+      answer: "We don't charge withdrawal fees, but your payment provider might have their own fees.",
+    },
+    {
+      question: "Is my money safe?",
+      answer: "Yes, client funds are held in segregated accounts with top-tier banks.",
     },
   ]
 
   // Filter FAQs based on search
-  const filteredFAQs = faqCategories[activeCategory].faqs.filter(
+  const filteredFaqs = allFaqs.filter(
     (faq) =>
       faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchQuery.toLowerCase()),
   )
 
+  // Animation variants for container
+  const containerVariants:Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.03,
+        delayChildren: 0.1,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }
+  }
+
   return (
-    <div className="relative font-sans min-h-screen">
-      {/* Solid color split background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_white_50%,_#1b1d24_50%)]"></div>
+    <div className="relative min-h-screen">
+      {/* Split background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-mate to-[50%]"></div>
 
-      {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-black/10 mb-6">
+      {/* Content */}
+      <div className="relative">
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.6,
+            ease: [0.25, 0.1, 0.25, 1]
+          }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12"
+        >
+          <div className="text-center max-w-2xl mx-auto">
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 200, 
+                damping: 20,
+                delay: 0.1 
+              }}
+              className="inline-flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full mb-4"
+            >
               <BiHelpCircle className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-white/80">
-                Frequently Asked Questions
-              </span>
-            </div>
+              <span className="text-xs font-medium text-foreground">FAQ</span>
+            </motion.div>
 
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Find Answers to{" "}
-              <span className="text-primary">Common Questions </span>
-            </h2>
-            <p className="text-lg md:text-xl text-mate max-w-3xl mx-auto leading-relaxed mb-12">
-              Get instant answers to your questions about trading, accounts,
-              platforms, and more.
-            </p>
+            <motion.h2 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-3xl md:text-4xl font-bold mb-3 text-foreground"
+            >
+              Frequently asked questions
+            </motion.h2>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-gray-600 mb-8"
+            >
+              Find answers to common questions about trading, accounts, and platforms.
+            </motion.p>
 
-            {/* Search Bar */}
-            <div className="mb-16">
-              <FAQSearch
-                searchQuery={searchQuery}
-                setSearchQuery={setSearchQuery}
-              />
-            </div>
+            <FAQSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
           </div>
-        </div>
-      </div>
+        </motion.div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Categories Sidebar */}
-          <div className="lg:col-span-1 space-y-4">
-            <h3 className="text-xl font-bold text-foreground mb-6">
-              Browse by Category
-            </h3>
-            {faqCategories.map((category, index) => (
-              <FAQCategory
-                key={index}
-                title={category.title}
-                icon={category.icon}
-                items={category.items}
-                activeCategory={activeCategory}
-                setActiveCategory={setActiveCategory}
-                index={index}
-              />
-            ))}
-
-            {/* Contact Card */}
-            <div className="mt-8">
-              <ContactCard />
-            </div>
-          </div>
-
-          {/* FAQ Content */}
-          <div className="lg:col-span-3">
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-2">
-                {faqCategories[activeCategory].title}
-              </h2>
-              <p className="text-gray-600">
-                {faqCategories[activeCategory].items} questions in this category
-              </p>
-            </div>
-
-            {/* FAQ List - Card backgrounds will show against the mate background */}
-            <div className="space-y-4">
-              {filteredFAQs.length > 0 ? (
-                filteredFAQs.map((faq, index) => (
-                  <FAQItem
-                    key={index}
-                    question={faq.question}
-                    answer={faq.answer}
-                    isOpen={openIndex === index}
-                    toggle={() =>
-                      setOpenIndex(openIndex === index ? null : index)
-                    }
-                  />
-                ))
-              ) : (
-                <div className="text-center py-12 bg-white rounded-xl shadow-lg">
-                  <BiSearch className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    No results found
-                  </h3>
-                  <p className="text-gray-600">
-                    No questions match your search "{searchQuery}". Try
-                    different keywords or browse the categories.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Stats Section */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-lg">
-                <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-gray-600">Support Availability</div>
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Left Column - FAQs */}
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="lg:col-span-8"
+            >
+              <div className="space-y-2">
+                <AnimatePresence mode="wait">
+                  {filteredFaqs.length > 0 ? (
+                    filteredFaqs.map((faq, index) => (
+                      <FAQItem
+                        key={faq.question + index}
+                        question={faq.question}
+                        answer={faq.answer}
+                        isOpen={openIndex === index}
+                        toggle={() => setOpenIndex(openIndex === index ? null : index)}
+                        index={index}
+                      />
+                    ))
+                  ) : (
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.98 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                      className="bg-white border border-gray-200 rounded-lg p-8 text-center"
+                    >
+                      <p className="text-foreground text-sm">No results found for "{searchQuery}"</p>
+                      <p className="text-xs text-gray-400 mt-1">Try different keywords</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-              <div className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-lg">
-                <div className="text-3xl font-bold text-primary mb-2">
-                  15 min
-                </div>
-                <div className="text-gray-600">Average Response Time</div>
-              </div>
-              <div className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-lg">
-                <div className="text-3xl font-bold text-primary mb-2">98%</div>
-                <div className="text-gray-600">Client Satisfaction</div>
-              </div>
-            </div>
+            </motion.div>
 
-            {/* Additional Help */}
-            <div className="mt-12 bg-white border border-primary/20 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Need More Help?
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Our comprehensive knowledge base contains detailed guides, video
-                tutorials, and trading strategies to help you succeed.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all">
-                  Visit Knowledge Base
-                </button>
-                <button className="px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-all">
-                  Download Platform Guides
-                </button>
+            {/* Right Column - Contact & Stats */}
+            <div className="lg:col-span-4">
+              {/* Contact Card */}
+              <div className="mb-6">
+                <ContactCard />
               </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-3">
+                <StatCard value="24/7" label="Support" delay={0.25} />
+                <StatCard value="15m" label="Avg. response" delay={0.3} />
+                <StatCard value="98%" label="Satisfaction" delay={0.35} />
+                <StatCard value="50k+" label="Clients" delay={0.4} />
+              </div>
+
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="text-xs text-gray-500 mt-4 text-center"
+              >
+                Trusted by traders worldwide
+              </motion.p>
             </div>
           </div>
         </div>

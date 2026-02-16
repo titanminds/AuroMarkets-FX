@@ -63,15 +63,16 @@ const Navbar = () => {
     <nav
       className={`w-full sticky top-0 z-100 transition-all duration-300 ${
         scrolled
-          ? "bg-white backdrop-blur-md shadow-lg"
-          : "bg-white backdrop-blur-md shadow-lg"
+          ? "bg-white backdrop-blur-l shadow-2xl"
+          : "bg-white"
       }`}
     >
       {/* Main Navigation Bar */}
       <div className="px-4 sm:px-6 lg:px-16 z-60">
         <div className="max-w-7xl mx-auto flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <motion.div
+          <motion.a
+          href="/"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="shrink-0"
@@ -81,7 +82,7 @@ const Navbar = () => {
               alt="Logo"
               className="h-14 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
             />
-          </motion.div>
+          </motion.a>
 
           {/* Desktop Navigation - Links arranged as requested */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -212,7 +213,7 @@ const Navbar = () => {
                             className="flex items-center justify-between w-full p-4 text-lg font-semibold text-gray-800 hover:text-primary hover:bg-gray-100 rounded-xl transition-all"
                           >
                             <div className="flex items-center gap-3">
-                              <link.icon className="text-primary" size={18} />
+                              {/* <link.icon className="text-primary" size={18} /> */}
                               <span>{link.label}</span>
                             </div>
                             <motion.div
@@ -267,7 +268,7 @@ const Navbar = () => {
                           className="flex items-center justify-between p-4 text-lg font-semibold text-gray-800 hover:text-primary hover:bg-gray-100 rounded-xl transition-all active:scale-95"
                         >
                           <div className="flex items-center gap-3">
-                            <link.icon className="text-primary" size={18} />
+                            {/* <link.icon className="text-primary" size={18} /> */}
                             <span>{link.label}</span>
                           </div>
                           <MdCallMade className="text-primary" size={20} />
@@ -363,7 +364,7 @@ const NavLink = ({
     return (
       <div className="relative group">
         <button className="flex items-center gap-1.5 text-sm xl:text-base font-semibold text-gray-800 hover:text-primary transition-colors group px-2 py-1">
-          <Icon size={14} className="text-primary" />
+          {/* <Icon size={14} className="text-primary" /> */}
           <span>{label}</span>
           <HiChevronDown
             size={14}
@@ -398,7 +399,7 @@ const NavLink = ({
       href={href}
       className="relative group px-2 py-1 text-sm xl:text-base font-semibold text-gray-800 hover:text-primary transition-colors flex items-center gap-1.5"
     >
-      <Icon size={14} className="text-primary" />
+      {/* <Icon size={14} className="text-primary" /> */}
       <span>{label}</span>
       <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all group-hover:w-4/5" />
     </Link>

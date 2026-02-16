@@ -9,14 +9,14 @@ const About = () => {
     <>
       <PageHero
         title="Company"
-        description="Welcome to MetaFX, a leading online forex company. We empower traders with the tools, expertise and support needed to succeed in the global markets."
-        backgroundImage="https://jan.coderdemo.com/newwp/bullion/wp-content/uploads/2023/03/page-title.jpg"
+        description="Welcome to AuroMarkets FX, a leading online forex company. We empower traders with the tools, expertise and support needed to succeed in the global markets."
+        backgroundImage="https://static.vecteezy.com/system/resources/thumbnails/052/042/795/small/trading-forex-gold-or-xauusd-char-growth-up-profit-in-bullish-market-vector.jpg"
         breadcrumbs={[{ label: "Home" }, { label: "About" }]}
       />
 
       <MissionVision />
       <StorySection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <GrowthSection />
     </>
   )
