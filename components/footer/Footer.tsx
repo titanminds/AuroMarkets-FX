@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           <Link href="/" className="mb-8 flex items-center justify-center">
             <div className="shrink-0">
               <img
-                src="/assets/images/Logo-w.png"
+                src="/assets/images/Logo-W.png"
                 alt="Logo"
                 className="h-12 md:h-20 w-auto object-contain"
               />
