@@ -8,7 +8,7 @@ interface FireLoaderProps {
 
 const FireLoader: React.FC<FireLoaderProps> = ({ logoSrc, size = 200 }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background">
+    <div className="flex items-center justify-center min-h-screen bg-mate">
       <div
         className="relative flex items-center justify-center"
         style={{ width: size, height: size }}>
