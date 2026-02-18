@@ -80,14 +80,14 @@ const Navbar = () => {
             {scrolled ? (
               // Black logo when scrolled
               <img
-                src="/assets/images/Logo.png"
+                src="/assets/images/Logo-W.png"
                 alt="Logo"
                 className="h-14 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
               />
             ) : (
               // White logo when transparent
               <img
-                src="/assets/images/whitelogo.png"
+                src="/assets/images/Logo-B.png"
                 alt="Logo"
                 className="h-14 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
               />

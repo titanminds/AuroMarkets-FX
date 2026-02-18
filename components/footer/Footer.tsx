@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           <Link href="/" className="mb-8 flex items-center justify-center">
             <div className="shrink-0">
               <img
-                src="/assets/images/Logo.png"
+                src="/assets/images/Logo-w.png"
                 alt="Logo"
                 className="h-12 md:h-20 w-auto object-contain"
               />
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
               <div className="flex flex-col items-center text-center">
                 <Link href="/" className="shrink-0 mb-4">
                   <img
-                    src="/assets/images/Logo.png"
+                    src="/assets/images/Logo-W.png"
                     alt="Logo"
                     className="h-14 w-auto object-contain"
                   />
@@ -318,7 +318,7 @@ const Footer: React.FC = () => {
             >
               <Link href="/" className="shrink-0 mb-6">
                 <img
-                  src="/assets/images/Logo.png"
+                  src="/assets/images/Logo-W.png"
                   alt="Logo"
                   className="h-20 lg:h-24 w-auto object-contain"
                 />
@@ -514,14 +514,14 @@ const Footer: React.FC = () => {
           </motion.div>
 
           {/* Back to Top Button for Mobile */}
-          <motion.button
+          {/* <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="md:hidden fixed bottom-6 right-6 h-12 w-12 rounded-full bg-primary text-white shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all flex items-center justify-center z-50"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             <span className="text-lg">↑</span>
-          </motion.button>
+          </motion.button> */}
         </div>
       </section>
     </footer>

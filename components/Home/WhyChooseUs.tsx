@@ -330,7 +330,7 @@ export default function Ecosystem() {
               <div className="text-center">
                 <div className="flex justify-center">
                   <img
-                    src="/assets/images/Logo.png"
+                    src="/assets/images/Logo-W.png"
                     alt="Logo"
                     className="h-20 w-auto object-contain"
                   />
@@ -468,7 +468,7 @@ export default function Ecosystem() {
               <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center p-8 backdrop-blur-sm">
                 <div className="shrink-0">
                   <img
-                    src="/assets/images/Logo.png"
+                    src="/assets/images/Logo-W.png"
                     alt="Logo"
                     className="h-12 md:h-20 w-auto object-contain"
                   />

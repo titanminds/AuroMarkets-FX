@@ -266,7 +266,8 @@ const DownloadSection = () => {
               </div>
 
               {/* Floating Download Badge */}
-              <motion.div
+              <motion.a
+              href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5"
                 className="absolute -bottom-4 -right-4 md:-right-6 bg-gradient-to-r from-primary to-primary text-white px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-lg hidden sm:flex items-center gap-2"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
@@ -275,7 +276,7 @@ const DownloadSection = () => {
                 <span className="text-sm md:text-base font-semibold">
                   Download Now
                 </span>
-              </motion.div>
+              </motion.a>
 
               {/* Floating Stats Badge */}
               <motion.div
