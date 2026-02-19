@@ -2,8 +2,8 @@ import React from "react"
 import Image from "next/image"
 
 interface FireLoaderProps {
-  logoSrc: string // Path to your logo
-  size?: number // Diameter of the loader
+  logoSrc: string 
+  size?: number 
 }
 
 const FireLoader: React.FC<FireLoaderProps> = ({ logoSrc, size = 200 }) => {

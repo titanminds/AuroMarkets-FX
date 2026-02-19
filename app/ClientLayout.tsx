@@ -1,40 +1,61 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/footer/Footer";
-import FloatingButtons from "../components/FloatingButton/FloatingIcons";
-import FireLoader from "./PendulumLoaderWithImage";
+import { useEffect, useState } from "react"
+import Navbar from "../components/navbar/Navbar"
+import Footer from "../components/footer/Footer"
+import FloatingButtons from "../components/FloatingButton/FloatingIcons"
+import FireLoader from "./PendulumLoaderWithImage"
+import { AnimatePresence, motion } from "framer-motion"
 
 export default function ClientLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  const [loading, setLoading] = useState(true);
-
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    // Hide loader when page is fully loaded
+    const handleLoad = () => {
+      setTimeout(() => setLoading(false), 800) // Add a slight delay for smooth transition
+    }
 
-    return () => clearTimeout(timer);
-  }, []);
+    if (document.readyState === "complete") {
+      handleLoad()
+    } else {
+      window.addEventListener("load", handleLoad)
+      // Fallback timeout
+      const timer = setTimeout(handleLoad, 3000)
+
+      return () => {
+        window.removeEventListener("load", handleLoad)
+        clearTimeout(timer)
+      }
+    }
+  }, [])
+
 
   return (
     <>
-      {loading ? (
-        <FireLoader logoSrc={"/assets/images/favicon.png"} />
-      ) : (
-        <>
-          <Navbar />
-          {/* <FireLoader logoSrc={"/assets/images/favicon.png"} /> */}
-          <FloatingButtons />
-          {children}
-          <Footer />
-        </>
-      )}
+      <AnimatePresence mode="wait">
+        {loading && <FireLoader logoSrc={"/assets/images/favicon.png"} />}
+      </AnimatePresence>
+
+      <AnimatePresence mode="wait">
+        {!loading && (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}>
+            <Navbar />
+            {/* <GXGLogoLoader /> */}
+            {children}
+            <FloatingButtons />
+            <Footer />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
-  );
+  )
 }
