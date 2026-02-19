@@ -6,6 +6,7 @@ import Footer from "../components/footer/Footer"
 import FloatingButtons from "../components/FloatingButton/FloatingIcons"
 import FireLoader from "./PendulumLoaderWithImage"
 import { AnimatePresence, motion } from "framer-motion"
+import { usePathname } from "next/navigation"
 
 export default function ClientLayout({
   children,
@@ -13,6 +14,7 @@ export default function ClientLayout({
   children: React.ReactNode
 }) {
   const [loading, setLoading] = useState(true)
+   const pathname = usePathname()
   useEffect(() => {
     // Hide loader when page is fully loaded
     const handleLoad = () => {
@@ -32,7 +34,13 @@ export default function ClientLayout({
       }
     }
   }, [])
-
+  useEffect(() => {
+    if (!loading) {
+      setLoading(true)
+      const timer = setTimeout(() => setLoading(false), 600)
+      return () => clearTimeout(timer)
+    }
+  }, [pathname])
 
   return (
     <>
