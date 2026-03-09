@@ -34,6 +34,7 @@ export default function ClientLayout({
       }
     }
   }, [])
+  // for every load after the link change
   useEffect(() => {
     if (!loading) {
       setLoading(true)

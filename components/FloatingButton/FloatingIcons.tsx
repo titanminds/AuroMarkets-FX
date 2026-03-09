@@ -12,7 +12,7 @@ const FloatingButtons = () => {
 
   // WhatsApp phone number (using international format without +)
   const whatsappNumber = ""
-  const whatsappMessage = "Hello! I'm interested in learning more about GXG Trading."
+  const whatsappMessage = "Hello! I'm interested in learning more about Auro Markets FX."
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   // Show back-to-top button when scrolling down
