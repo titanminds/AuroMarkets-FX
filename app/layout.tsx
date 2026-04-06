@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#ffae00",
+  themeColor: "#138DC8",
 }
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   other: {
-    "msapplication-TileColor": "#ffae00",
+    "msapplication-TileColor": "#138DC8",
     "msapplication-TileImage": "/favicon.png",
   },
 }
