@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* 2. Main Content */}
-      <div className="relative z-10 flex-grow flex flex-col items-center justify-center px-4 text-center mt-12">
+      <div className="relative z-10 flex-grow flex flex-col items-center justify-center px-4 text-center pt-40">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
