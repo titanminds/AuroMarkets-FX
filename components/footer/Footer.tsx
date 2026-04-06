@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           <Link href="/" className="mb-8 flex items-center justify-center">
             <div className="shrink-0">
               <img
-                src="/assets/images/Logo.png"
+                src="/assets/images/Logo-B.png"
                 alt="Logo"
                 className="h-12 md:h-20 w-auto object-contain"
               />
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="bg-primary cursor-pointer text-mate px-8 py-3 rounded-sm flex items-center gap-2 font-bold text-[14px] hover:bg-primary/70 hover:text-mate transition-all active:scale-95 shadow-lg shadow-red-200"
+            className="bg-primary cursor-pointer text-mate px-8 py-3 rounded-sm flex items-center gap-2 font-bold text-[14px] hover:bg-primary/70 hover:text-mate transition-all active:scale-95 shadow-lg shadow-primary/50"
           >
             Contact Us
           </Link>
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
               <div className="flex flex-col items-center text-center">
                 <Link href="/" className="shrink-0 mb-4">
                   <img
-                    src="/assets/images/Logo.png"
+                    src="/assets/images/Logo-B.png"
                     alt="Logo"
                     className="h-14 w-auto object-contain"
                   />
@@ -318,7 +318,7 @@ const Footer: React.FC = () => {
             >
               <Link href="/" className="shrink-0 mb-6">
                 <img
-                  src="/assets/images/Logo.png"
+                  src="/assets/images/Logo-B.png"
                   alt="Logo"
                   className="h-20 lg:h-24 w-auto object-contain"
                 />

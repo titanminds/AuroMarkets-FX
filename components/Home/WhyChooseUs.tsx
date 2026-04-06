@@ -52,13 +52,7 @@ const Node = ({
       className={`absolute flex flex-col ${align === "left" ? "items-start" : align === "right" ? "items-end" : "items-center"} ${className} ${isMobile ? "relative !static" : ""}`}
       onMouseEnter={() => !isMobile && setIsHovered(true)}
       onMouseLeave={() => !isMobile && setIsHovered(false)}>
-      <motion.div
-        animate={
-          isHovered
-            ? { scale: 1.1, y: -5, boxShadow: "0 10px 40px rgba(255, 174, 0, 0.25)" }
-            : {}
-        }
-        className="flex items-center gap-3 bg-background/90 backdrop-blur-sm border border-primary/20 shadow-md px-4 py-2.5 rounded-full hover:shadow-xl transition-all">
+      <motion.div className="flex items-center gap-3 bg-background/90 backdrop-blur-sm border border-primary/20 shadow-md px-4 py-2.5 rounded-full hover:shadow-xl transition-all">
         <span className="text-primary">{icon}</span>
         <span className="text-sm font-semibold text-mate tracking-wide uppercase">
           {label}
@@ -157,7 +151,7 @@ export default function Ecosystem() {
   ]
 
   return (
-    <section className="relative w-full py-8 lg:py-32 bg-[#f2f3f5] overflow-hidden font-sans">
+    <section className="relative w-full py-8 lg:py-32 bg-white overflow-hidden font-sans">
       {/* Header */}
       <div className="text-center mb-8 lg:mb-20 px-4 relative z-10">
         <motion.div
@@ -268,9 +262,7 @@ export default function Ecosystem() {
                       {node.icon}
                     </div>
                   </div>
-                  <h3 className="font-bold text-mate text-sm">
-                    {node.label}
-                  </h3>
+                  <h3 className="font-bold text-mate text-sm">{node.label}</h3>
                   {hoveredNode === node.label && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
@@ -330,7 +322,7 @@ export default function Ecosystem() {
               <div className="text-center">
                 <div className="flex justify-center">
                   <img
-                    src="/assets/images/Logo.png"
+                    src="/assets/images/Logo-B.png"
                     alt="Logo"
                     className="h-20 w-auto object-contain"
                   />
@@ -468,7 +460,7 @@ export default function Ecosystem() {
               <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center p-8 backdrop-blur-sm">
                 <div className="shrink-0">
                   <img
-                    src="/assets/images/Logo.png"
+                    src="/assets/images/Logo-B.png"
                     alt="Logo"
                     className="h-12 md:h-20 w-auto object-contain"
                   />

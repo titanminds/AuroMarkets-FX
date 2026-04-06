@@ -48,7 +48,7 @@ TickerTape.displayName = "TickerTape";
 // --- Main Hero Section ---
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-mate flex flex-col">
+    <section className="relative sm:min-h-screen w-full overflow-hidden bg-mate flex flex-col">
       
       {/* 1. Background Image & Dark Mate Overlay */}
       <div className="absolute inset-0 z-0">
@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* 2. Main Content */}
-      <div className="relative z-10 flex-grow flex flex-col items-center justify-center px-4 text-center pt-40">
+      <div className="relative z-10 grow flex flex-col items-center justify-center px-4 text-center pt-40">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

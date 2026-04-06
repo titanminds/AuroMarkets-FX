@@ -28,9 +28,9 @@ const CardData = [
 
 const HangingCards = () => {
   return (
-    <section className="relative bg-background py-24 px-6 overflow-hidden">
+    <section className="relative bg-mate py-24 px-6 overflow-hidden">
       {/* Subtle Shadow on the "Floor" */}
-      <div className="absolute bottom-0 left-0 right-0 h-42 bg-linear-to-t from-primary to-primary" />
+      <div className="absolute bottom-0 left-0 right-0 h-100 bg-linear-to-b from-mate to-white" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 relative">
         {CardData.map((card, index) => (

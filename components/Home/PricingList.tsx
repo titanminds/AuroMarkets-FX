@@ -133,11 +133,11 @@ const PricingList = () => {
   }
 
   return (
-    <section className="relative overflow-hidden font-sans  py-20">
-      {/* Animated Background Elements */}
+    <section className="relative overflow-hidden font-sans  py-20 bg-white">
+      {/* Animated mate Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 -left-30 w-102 h-102 bg-primary/50 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-mate/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-2/4 w-102 h-102 bg-primary/50 rounded-full blur-3xl animate-pulse"></div>
+        {/* <div className="absolute bottom-20 right-10 w-80 h-80 bg-mate rounded-full blur-3xl animate-pulse delay-1000"></div> */}
       </div>
 
       {/* MAIN CONTENT */}
@@ -147,13 +147,13 @@ const PricingList = () => {
           <div className="inline-flex items-center justify-center mb-6">
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl"></div>
-              <h4 className="relative text-xs font-bold bg-primary text-white tracking-[0.3em] uppercase px-6 py-3 rounded-full shadow-lg">
+              <h4 className="relative text-xs font-bold bg-primary text-mate tracking-[0.3em] uppercase px-6 py-3 rounded-full shadow-lg">
                 Market Insights
               </h4>
             </div>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 lg:mb-6 px-4 text-background">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 lg:mb-6 px-4 text-mate">
             Live{' '}
             <span className="relative">
               <span className="relative z-10 bg-primary bg-clip-text text-transparent">
@@ -163,7 +163,7 @@ const PricingList = () => {
             </span>
           </h2>
           
-          <p className="text-background/50 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-mate/50 max-w-2xl mx-auto text-lg leading-relaxed">
             Real-time pricing for major financial instruments across global markets, updated every second
           </p>
         </div>
@@ -176,8 +176,8 @@ const PricingList = () => {
               onClick={() => setActiveTab(tab)}
               className={`group relative px-6 py-3.5 rounded-full font-medium transition-all duration-300 capitalize flex items-center gap-2 ${
                 activeTab === tab
-                  ? "bg-primary text-white shadow-lg shadow-primary/25 scale-105"
-                  : "bg-white backdrop-blur-sm text-gray-700 hover:bg-white hover:shadow-md hover:scale-105"
+                  ? "bg-primary text-mate shadow-lg shadow-primary/25 scale-105"
+                  : "bg-mate backdrop-blur-sm text-white/50 hover:bg-mate hover:shadow-md hover:scale-105"
               }`}>
               <span className={`transition-transform duration-300 ${
                 activeTab === tab ? "scale-110" : "group-hover:scale-110"
@@ -187,7 +187,7 @@ const PricingList = () => {
               <span className="relative">
                 {tab}
                 {activeTab === tab && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white/50 rounded-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-mate/50 rounded-full"></span>
                 )}
               </span>
             </button>
@@ -200,25 +200,25 @@ const PricingList = () => {
           {canScrollLeft && (
             <button
               onClick={() => scroll('left')}
-              className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-3 shadow-xl hover:shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 border border-gray-100"
+              className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 bg-mate rounded-full p-3 shadow-xl hover:shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 border border-gray-100"
               aria-label="Scroll left"
             >
-              <BiChevronLeft className="w-5 h-5 text-gray-700" />
+              <BiChevronLeft className="w-5 h-5 text-white/50" />
             </button>
           )}
           
           {canScrollRight && (
             <button
               onClick={() => scroll('right')}
-              className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-3 shadow-xl hover:shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 border border-gray-100"
+              className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 bg-mate rounded-full p-3 shadow-xl hover:shadow-2xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 border border-gray-100"
               aria-label="Scroll right"
             >
-              <BiChevronRight className="w-5 h-5 text-gray-700" />
+              <BiChevronRight className="w-5 h-5 text-white/50" />
             </button>
           )}
 
           {/* Widgets Container with Glass Effect */}
-          <div className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
+          <div className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border border-mate/20 shadow-2xl">
             <div 
               ref={sliderRef}
               className="overflow-x-auto scrollbar-hide"
