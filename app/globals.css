@@ -13,10 +13,7 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-mate: var(--mate);
   --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-mate: var(--mate);
   --color-mate: var(--mate);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

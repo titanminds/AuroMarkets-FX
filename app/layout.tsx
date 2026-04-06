@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./globals.css"
 import ClientLayout from "./ClientLayout";
 
 const geistSans = Geist({
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: "MYBGFX",
-    statusBarStyle: "mate-translucent",
+    statusBarStyle: "black-translucent",
   },
   openGraph: {
     title: "MYBGFX",
