@@ -161,7 +161,7 @@ const PrivacyPolicyPage: React.FC = () => {
         <>
           <p className="mb-3">
             Welcome to{" "}
-            <span className="font-semibold text-primary">AuroMarkets FX</span> ("we",
+            <span className="font-semibold text-primary">MYBGFX</span> ("we",
             "our", "us"). We are committed to protecting your personal data and
             respecting your privacy.
           </p>
@@ -183,15 +183,15 @@ const PrivacyPolicyPage: React.FC = () => {
         <>
           <p className="mb-3">
             The data controller for your personal data is{" "}
-            <span className="font-semibold">AuroMarkets FX</span>.
+            <span className="font-semibold">MYBGFX</span>.
           </p>
           <p>
             Contact our Data Protection Officer at:{" "}
             <a
-              href="mailto:dpo@AuroMarkets FX.com"
+              href="mailto:dpo@MYBGFX.com"
               className="text-primary font-medium hover:underline"
             >
-              dpo@AuroMarkets FX.com
+              dpo@MYBGFX.com
             </a>
           </p>
         </>
@@ -321,7 +321,7 @@ const PrivacyPolicyPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>AuroMarkets FX Privacy Policy | Data Protection</title>
+        <title>MYBGFX Privacy Policy | Data Protection</title>
         <meta
           name="description"
           content="Protecting your personal data is our top priority. Learn how we collect, use, and safeguard your information."
@@ -552,7 +552,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 </motion.p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <motion.a
-                    href="mailto:info@auromarketsfx.com"
+                    href="mailto:support@mybgfx.com"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="inline-flex items-center justify-center px-6 py-3 bg-mate text-white font-medium rounded-lg hover:bg-primary/90 transition-colors"
@@ -668,7 +668,7 @@ const PrivacyPolicyPage: React.FC = () => {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-gray-400">
-              © {new Date().getFullYear()} AuroMarkets FX. All rights reserved.
+              © {new Date().getFullYear()} MYBGFX. All rights reserved.
             </p>
             <p className="text-gray-500 text-sm mt-2">
               Protecting your privacy is our commitment

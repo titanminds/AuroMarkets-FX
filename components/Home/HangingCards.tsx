@@ -54,7 +54,7 @@ const HangingCards = () => {
               </div>
 
               <div className="space-y-4 flex-grow">
-                <span className="text-[11px] font-black text-primary tracking-[0.2em] uppercase">
+                <span className="text-[11px] font-mate text-primary tracking-[0.2em] uppercase">
                   Our Expertise
                 </span>
 

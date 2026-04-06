@@ -42,7 +42,7 @@ const FAQItem: React.FC<FAQItemProps> = ({
         onClick={toggle}
         className="w-full p-4 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors duration-200"
       >
-        <h3 className="text-base font-medium text-foreground pr-4">{question}</h3>
+        <h3 className="text-base font-medium text-mate pr-4">{question}</h3>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ 
@@ -127,7 +127,7 @@ const FAQSearch: React.FC<FAQSearchProps> = ({
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search questions..."
-        className="w-full pl-9 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white text-foreground text-sm transition-all duration-200"
+        className="w-full pl-9 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white text-mate text-sm transition-all duration-200"
       />
     </motion.div>
   )
@@ -174,7 +174,7 @@ const ContactCard: React.FC = () => {
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
           className="flex items-center gap-3"
         >
-          <div className="bg-black/30 p-2 rounded">
+          <div className="bg-mate/30 p-2 rounded">
             <BiChat className="w-4 h-4 text-primary" />
           </div>
           <div>
@@ -259,11 +259,11 @@ const FAQSection: React.FC = () => {
   // All FAQs combined
   const allFaqs = [
     {
-      question: "What is AuroMarkets FX Global?",
-      answer: "AuroMarkets FX Global is a forex trading platform offering currency trading, CFDs, commodities, and indices with 24/7 support.",
+      question: "What is MYBGFX Global?",
+      answer: "MYBGFX Global is a forex trading platform offering currency trading, CFDs, commodities, and indices with 24/7 support.",
     },
     {
-      question: "Is AuroMarkets FX Global regulated?",
+      question: "Is MYBGFX Global regulated?",
       answer: "Yes, we are fully regulated and licensed under international financial authorities.",
     },
     {
@@ -351,14 +351,14 @@ const FAQSection: React.FC = () => {
               className="inline-flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full mb-4"
             >
               <BiHelpCircle className="w-4 h-4 text-primary" />
-              <span className="text-xs font-medium text-foreground">FAQ</span>
+              <span className="text-xs font-medium text-mate">FAQ</span>
             </motion.div>
 
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-3xl md:text-4xl font-bold mb-3 text-foreground"
+              className="text-3xl md:text-4xl font-bold mb-3 text-mate"
             >
               Frequently asked questions
             </motion.h2>
@@ -407,7 +407,7 @@ const FAQSection: React.FC = () => {
                       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                       className="bg-white border border-gray-200 rounded-lg p-8 text-center"
                     >
-                      <p className="text-foreground text-sm">No results found for "{searchQuery}"</p>
+                      <p className="text-mate text-sm">No results found for "{searchQuery}"</p>
                       <p className="text-xs text-gray-400 mt-1">Try different keywords</p>
                     </motion.div>
                   )}

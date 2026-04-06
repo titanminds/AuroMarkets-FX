@@ -38,7 +38,7 @@ const BenefitsSection = () => {
           }}
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-mate/60" />
       </div>
 
       {/* Scrollable Content with its own background */}
@@ -52,7 +52,7 @@ const BenefitsSection = () => {
           backgroundPosition: "center",
         }}>
         {/* Overlay for better readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-mate/40"></div>
 
         <div className="relative z-10 flex flex-row items-stretch max-w-7xl w-full px-4">
           {/* Main Content Card */}
@@ -94,7 +94,7 @@ const BenefitsSection = () => {
 
             {/* Controls Container */}
             <div className="flex items-center gap-0">
-              <Link href='https://portal.auromarketsfx.com/register' className="bg-mate text-white hover:text-mate cursor-pointer px-4 md:px-7 py-2.5 md:py-3 rounded-sm flex items-center gap-2 font-bold text-[13px] md:text-[15px] hover:bg-primary transition-all active:scale-95 shadow-lg shadow-red-100">
+              <Link href='https://portal.mybgfx.com/register' className="bg-mate text-white hover:text-mate cursor-pointer px-4 md:px-7 py-2.5 md:py-3 rounded-sm flex items-center gap-2 font-bold text-[13px] md:text-[15px] hover:bg-primary transition-all active:scale-95 shadow-lg shadow-red-100">
                 Open Your Account{" "}
                 <MdCallMade
                   size={18}

@@ -153,7 +153,7 @@ const FloatingButtons = () => {
 
           {/* Unread message indicator */}
           <motion.div
-            className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full border-2 border-black flex items-center justify-center"
+            className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full border-2 border-mate flex items-center justify-center"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 1.5 }}
@@ -163,11 +163,11 @@ const FloatingButtons = () => {
 
           {/* Hover tooltip */}
           <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            <div className="bg-black/90 text-white text-sm py-2 px-3 rounded-lg whitespace-nowrap">
+            <div className="bg-mate/90 text-white text-sm py-2 px-3 rounded-lg whitespace-nowrap">
               Chat with Support
             </div>
             <div className="absolute top-1/2 left-full -translate-y-1/2">
-              <div className="w-0 h-0 border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-black/90" />
+              <div className="w-0 h-0 border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-mate/90" />
             </div>
           </div>
         </button>
@@ -230,11 +230,11 @@ const FloatingButtons = () => {
 
             {/* Hover tooltip */}
             <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-              <div className="bg-black/90 text-white text-sm py-2 px-3 rounded-lg whitespace-nowrap">
+              <div className="bg-mate/90 text-white text-sm py-2 px-3 rounded-lg whitespace-nowrap">
                 Back to Top
               </div>
               <div className="absolute top-1/2 left-full -translate-y-1/2">
-                <div className="w-0 h-0 border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-black/90" />
+                <div className="w-0 h-0 border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-mate/90" />
               </div>
             </div>
           </motion.button>

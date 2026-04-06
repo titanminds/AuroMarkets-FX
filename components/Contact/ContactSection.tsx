@@ -13,7 +13,7 @@ import { CgMail } from "react-icons/cg"
 const ContactSection = () => {
   const whatsappNumber = ""
   const whatsappMessage =
-    "Hello! I'm interested in learning more about AuroMarkets FX."
+    "Hello! I'm interested in learning more about MYBGFX."
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   const handleWhatsAppClick = () => {
@@ -21,7 +21,7 @@ const ContactSection = () => {
   }
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:info@auromarketsfx.com"
+    window.location.href = "mailto:support@mybgfx.com"
   }
 
   const handleLiveChatClick = () => {
@@ -123,7 +123,7 @@ const ContactSection = () => {
                 <BiMapPin className="w-5 h-5 text-gray-300 group-hover:text-primary transition-colors" />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
-                AuroMarkets FX UK LTD 114 Lowbrook road Ilford, London IG1 2HJ
+                MYBGFX UK LTD 114 Lowbrook road Ilford, London IG1 2HJ
                 United Kingdom
               </p>
             </div>
@@ -136,7 +136,7 @@ const ContactSection = () => {
                 <CgMail className="w-5 h-5 text-gray-300 group-hover:text-primary transition-colors" />
               </div>
               <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
-                info@auromarketsfx.com
+                support@mybgfx.com
               </p>
             </div>
 

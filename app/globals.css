@@ -2,10 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #222222;
-  --primary:#ffae00;
-  --secondary: #42b44e;
-  --black:#000000;
+  --primary:#138DC8;
   --mate:#1b1d24;
   --font-geist-sans:
     "Geist Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -16,10 +13,10 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-mate: var(--mate);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
-  --color-black: var(--black);
+  --color-mate: var(--mate);
   --color-mate: var(--mate);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -40,7 +37,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--mate);
   font-family: Arial, Helvetica, sans-serif;
 }
 /* In your global.css */

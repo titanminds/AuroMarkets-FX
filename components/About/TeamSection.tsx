@@ -85,7 +85,7 @@
 //       className="relative py-24 overflow-hidden"
 //       style={{
 //         backgroundImage:
-//           'url("https://AuroMarkets FXglobal.com/wp-content/uploads/2023/03/shape-32-1.png")',
+//           'url("https://MYBGFXglobal.com/wp-content/uploads/2023/03/shape-32-1.png")',
 //         backgroundAttachment: "scroll",
 //         backgroundSize: "cover",
 //         backgroundPosition: "center",
@@ -96,7 +96,7 @@
 //           <div
 //             className="absolute inset-0"
 //             style={{
-//               backgroundImage: `url("https://AuroMarkets FXglobal.com/wp-content/uploads/2023/03/shape-33-1.png")`,
+//               backgroundImage: `url("https://MYBGFXglobal.com/wp-content/uploads/2023/03/shape-33-1.png")`,
 //               backgroundSize: "100% 100%",
 //               backgroundRepeat: "repeat",
 //               backgroundPosition: "center",
@@ -113,7 +113,7 @@
 //           viewport={{ once: true }}
 //           transition={{ duration: 0.8 }}
 //           className="text-center mb-20">
-//           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-black/10 mb-6">
+//           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-mate/10 mb-6">
 //             <FiUsers className="w-4 h-4 text-primary" />
 //             <span className="text-sm font-medium text-white/80">
 //               Leadership Team
@@ -121,7 +121,7 @@
 //           </div>
 
 //           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-//             <span className="text-black">Meet Our </span>
+//             <span className="text-mate">Meet Our </span>
 //             <motion.span
 //               initial={{ backgroundPosition: "200% center" }}
 //               whileInView={{ backgroundPosition: "0% center" }}
@@ -130,7 +130,7 @@
 //               Visionary Team
 //             </motion.span>
 //           </h2>
-//           <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+//           <p className="text-lg text-mate/70 max-w-2xl mx-auto leading-relaxed">
 //             A collective of passionate innovators dedicated to transforming
 //             brokerage operations and creating exceptional experiences worldwide.
 //           </p>
@@ -192,7 +192,7 @@
 //                 {/* Content */}
 //                 <div className="relative z-10 text-center">
 //                   <motion.h3
-//                     className="text-xl font-bold text-foreground mb-2 group-hover:bg-primary group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent"
+//                     className="text-xl font-bold text-mate mb-2 group-hover:bg-primary group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent"
 //                     whileHover={{ scale: 1.05 }}>
 //                     {member.name}
 //                   </motion.h3>
@@ -205,7 +205,7 @@
 //                     </span>
 //                   </div>
 
-//                   <p className="text-sm text-foreground/70 mb-4 line-clamp-2">
+//                   <p className="text-sm text-mate/70 mb-4 line-clamp-2">
 //                     {member.description}
 //                   </p>
 
@@ -232,7 +232,7 @@
 //                         href={social.href}
 //                         whileHover={{ y: -4, scale: 1.2 }}
 //                         whileTap={{ scale: 0.9 }}
-//                         className={`w-8 h-8 rounded-lg bg-mate/30 flex items-center justify-center text-foreground/70 ${social.color} transition-all`}>
+//                         className={`w-8 h-8 rounded-lg bg-mate/30 flex items-center justify-center text-mate/70 ${social.color} transition-all`}>
 //                         <social.icon className="w-4 h-4" />
 //                       </motion.a>
 //                     ))}
@@ -373,7 +373,7 @@ const TeamSection = () => {
             backgroundAttachment: "fixed",
           }}
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-mate/60" />
       </div>
 
       {/* 🧭 Scrollable Team Section */}
@@ -381,7 +381,7 @@ const TeamSection = () => {
         className="relative py-24 overflow-hidden"
         style={{
           backgroundImage:
-            'url("https://AuroMarkets FXglobal.com/wp-content/uploads/2023/03/shape-32-1.png")',
+            'url("https://MYBGFXglobal.com/wp-content/uploads/2023/03/shape-32-1.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}>
@@ -393,7 +393,7 @@ const TeamSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-black/10 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-mate/10 mb-6">
               <FiUsers className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-white/80">
                 Leadership Team
@@ -472,7 +472,7 @@ const TeamSection = () => {
                   {/* Content */}
                   <div className="relative z-10 text-center">
                     <motion.h3
-                      className="text-xl font-bold text-foreground mb-2 group-hover:bg-primary group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent"
+                      className="text-xl font-bold text-mate mb-2 group-hover:bg-primary group-hover:from-primary group-hover:to-secondary group-hover:bg-clip-text group-hover:text-transparent"
                       whileHover={{ scale: 1.05 }}>
                       {member.name}
                     </motion.h3>
@@ -485,7 +485,7 @@ const TeamSection = () => {
                       </span>
                     </div>
 
-                    <p className="text-sm text-foreground/70 mb-4 line-clamp-2">
+                    <p className="text-sm text-mate/70 mb-4 line-clamp-2">
                       {member.description}
                     </p>
 
@@ -512,7 +512,7 @@ const TeamSection = () => {
                           href={social.href}
                           whileHover={{ y: -4, scale: 1.2 }}
                           whileTap={{ scale: 0.9 }}
-                          className={`w-8 h-8 rounded-lg bg-mate/30 flex items-center justify-center text-foreground/70 ${social.color} transition-all`}>
+                          className={`w-8 h-8 rounded-lg bg-mate/30 flex items-center justify-center text-mate/70 ${social.color} transition-all`}>
                           <social.icon className="w-4 h-4" />
                         </motion.a>
                       ))}

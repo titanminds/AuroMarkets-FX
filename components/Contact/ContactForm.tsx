@@ -189,7 +189,7 @@ const ContactForm = () => {
           <div className="lg:col-span-4 mt-8">
             {/* Quick Tips */}
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-              <h4 className="font-bold text-foreground mb-4">Quick Tips</h4>
+              <h4 className="font-bold text-mate mb-4">Quick Tips</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2 text-gray-600">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>

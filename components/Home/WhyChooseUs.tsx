@@ -60,7 +60,7 @@ const Node = ({
         }
         className="flex items-center gap-3 bg-background/90 backdrop-blur-sm border border-primary/20 shadow-md px-4 py-2.5 rounded-full hover:shadow-xl transition-all">
         <span className="text-primary">{icon}</span>
-        <span className="text-sm font-semibold text-foreground tracking-wide uppercase">
+        <span className="text-sm font-semibold text-mate tracking-wide uppercase">
           {label}
         </span>
       </motion.div>
@@ -173,7 +173,7 @@ export default function Ecosystem() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 lg:mb-6 px-4 text-foreground">
+          className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 lg:mb-6 px-4 text-mate">
           Grow your business with{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary animate-gradient-x">
             No Constraints
@@ -184,7 +184,7 @@ export default function Ecosystem() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-mate/80 text-sm lg:text-base max-w-2xl mx-auto">
-          AuroMarkets FX is fully integrated to cover all your needs
+          MYBGFX is fully integrated to cover all your needs
         </motion.p>
       </div>
 
@@ -200,7 +200,7 @@ export default function Ecosystem() {
                 className={`flex-shrink-0 flex items-center gap-2 px-4 py-3 rounded-full text-xs font-medium transition-all ${
                   activeTab === category.id
                     ? "bg-mate text-background shadow-lg"
-                    : "bg-background text-foreground border border-primary/20 hover:border-primary"
+                    : "bg-background text-mate border border-primary/20 hover:border-primary"
                 }`}>
                 {category.icon}
                 {category.label}
@@ -240,7 +240,7 @@ export default function Ecosystem() {
                 className="bg-background rounded-2xl p-4 shadow-lg border border-primary/10">
                 <div className="flex items-center gap-2 mb-2">
                   {stat.icon}
-                  <span className="text-lg font-bold text-foreground">
+                  <span className="text-lg font-bold text-mate">
                     {stat.value}
                   </span>
                 </div>
@@ -268,7 +268,7 @@ export default function Ecosystem() {
                       {node.icon}
                     </div>
                   </div>
-                  <h3 className="font-bold text-foreground text-sm">
+                  <h3 className="font-bold text-mate text-sm">
                     {node.label}
                   </h3>
                   {hoveredNode === node.label && (
@@ -330,7 +330,7 @@ export default function Ecosystem() {
               <div className="text-center">
                 <div className="flex justify-center">
                   <img
-                    src="/assets/images/Logo-W.png"
+                    src="/assets/images/Logo.png"
                     alt="Logo"
                     className="h-20 w-auto object-contain"
                   />
@@ -468,7 +468,7 @@ export default function Ecosystem() {
               <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center p-8 backdrop-blur-sm">
                 <div className="shrink-0">
                   <img
-                    src="/assets/images/Logo-W.png"
+                    src="/assets/images/Logo.png"
                     alt="Logo"
                     className="h-12 md:h-20 w-auto object-contain"
                   />

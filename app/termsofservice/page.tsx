@@ -160,7 +160,7 @@ const TermsAndConditionsPage: React.FC = () => {
       content: (
         <>
           <p className="mb-3">
-            By accessing and using the AuroMarkets FX platform ("Platform"), you agree to be bound by these Terms and Conditions ("Terms"). These Terms constitute a legally binding agreement between you and AuroMarkets FX Ltd.
+            By accessing and using the MYBGFX platform ("Platform"), you agree to be bound by these Terms and Conditions ("Terms"). These Terms constitute a legally binding agreement between you and MYBGFX Ltd.
           </p>
           <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-3">
             <div className="flex">
@@ -310,7 +310,7 @@ const TermsAndConditionsPage: React.FC = () => {
       content: (
         <div className="space-y-3">
           <p className="text-gray-600">
-            All content, features, and functionality on the Platform, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, are the exclusive property of AuroMarkets FX Ltd. and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+            All content, features, and functionality on the Platform, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, are the exclusive property of MYBGFX Ltd. and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
           </p>
           
           <div className="bg-gray-50 p-4 rounded-lg">
@@ -327,7 +327,7 @@ const TermsAndConditionsPage: React.FC = () => {
       content: (
         <>
           <p className="mb-3 text-gray-600">
-            To the maximum extent permitted by applicable law, AuroMarkets FX Ltd. shall not be liable for:
+            To the maximum extent permitted by applicable law, MYBGFX Ltd. shall not be liable for:
           </p>
           
           <ul className="space-y-2 list-disc ml-5 mb-3">
@@ -359,7 +359,7 @@ const TermsAndConditionsPage: React.FC = () => {
             </div>
             
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-gray-800 mb-2">By AuroMarkets FX</h5>
+              <h5 className="font-semibold text-gray-800 mb-2">By MYBGFX</h5>
               <p className="text-sm text-gray-600">
                 We may suspend or terminate your account for violation of these Terms, suspicious activity, or legal/regulatory requirements.
               </p>
@@ -456,10 +456,10 @@ const TermsAndConditionsPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>AuroMarkets FX Terms & Conditions | Legal Agreement</title>
+        <title>MYBGFX Terms & Conditions | Legal Agreement</title>
         <meta
           name="description"
-          content="Review AuroMarkets FX Terms & Conditions. Understand our legal agreement covering trading rules, risk disclosure, and user responsibilities."
+          content="Review MYBGFX Terms & Conditions. Understand our legal agreement covering trading rules, risk disclosure, and user responsibilities."
         />
       </Head>
 
@@ -521,7 +521,7 @@ const TermsAndConditionsPage: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="text-lg md:text-xl text-white/90 mb-6"
                 >
-                  Our legal agreement governing your use of AuroMarkets FX trading platform
+                  Our legal agreement governing your use of MYBGFX trading platform
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -630,7 +630,7 @@ const TermsAndConditionsPage: React.FC = () => {
                     <h3 className="text-lg font-semibold text-red-800">Legal Notice</h3>
                     <div className="mt-2 text-red-700">
                       <p>
-                        By using AuroMarkets FX, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions. These terms contain important information regarding your rights, obligations, and risk disclosures.
+                        By using MYBGFX, you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions. These terms contain important information regarding your rights, obligations, and risk disclosures.
                       </p>
                     </div>
                   </div>
@@ -772,13 +772,13 @@ const TermsAndConditionsPage: React.FC = () => {
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Legal Department</h4>
                     <a
-                      href="mailto:legal@AuroMarkets FX.com"
+                      href="mailto:legal@MYBGFX.com"
                       className="text-primary hover:underline flex items-center space-x-2"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      <span>legal@AuroMarkets FX.com</span>
+                      <span>legal@MYBGFX.com</span>
                     </a>
                   </div>
                   <div>
@@ -809,7 +809,7 @@ const TermsAndConditionsPage: React.FC = () => {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-gray-400">
-              © {new Date().getFullYear()} AuroMarkets FX Ltd. All rights reserved.
+              © {new Date().getFullYear()} MYBGFX Ltd. All rights reserved.
             </p>
             <p className="text-gray-500 text-sm mt-2">
               Registered in England & Wales | Company No: 12345678

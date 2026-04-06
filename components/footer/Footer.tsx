@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           <Link href="/" className="mb-8 flex items-center justify-center">
             <div className="shrink-0">
               <img
-                src="/assets/images/Logo-W.png"
+                src="/assets/images/Logo.png"
                 alt="Logo"
                 className="h-12 md:h-20 w-auto object-contain"
               />
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
               <div className="flex flex-col items-center text-center">
                 <Link href="/" className="shrink-0 mb-4">
                   <img
-                    src="/assets/images/Logo-W.png"
+                    src="/assets/images/Logo.png"
                     alt="Logo"
                     className="h-14 w-auto object-contain"
                   />
@@ -127,11 +127,11 @@ const Footer: React.FC = () => {
                 </h4>
                 <div className="space-y-2">
                   <a
-                    href="mailto:info@auromarketsfx.com"
+                    href="mailto:support@mybgfx.com"
                     className="flex items-center justify-center gap-2 text-sm text-mate/70 hover:text-primary transition-colors"
                   >
                     <FaEnvelope className="text-primary" />
-                    info@auromarketsfx.com
+                    support@mybgfx.com
                   </a>
                   {/* <a
                     href="tel:+971588856256"
@@ -318,7 +318,7 @@ const Footer: React.FC = () => {
             >
               <Link href="/" className="shrink-0 mb-6">
                 <img
-                  src="/assets/images/Logo-W.png"
+                  src="/assets/images/Logo.png"
                   alt="Logo"
                   className="h-20 lg:h-24 w-auto object-contain"
                 />
@@ -328,11 +328,11 @@ const Footer: React.FC = () => {
               </h4>
               <div className="space-y-2">
                 <a
-                  href="mailto:info@auromarketsfx.com"
+                  href="mailto:support@mybgfx.com"
                   className="block text-sm text-mate/70 hover:text-primary cursor-pointer transition-colors hover:translate-x-1 hover:underline flex items-center gap-2"
                 >
                   <FaEnvelope className="text-primary/70" />
-                  info@auromarketsfx.com
+                  support@mybgfx.com
                 </a>
                 {/* <a
                   href="tel:+971588856256"
@@ -460,7 +460,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="text-center md:text-left"
             >
-              © {new Date().getFullYear()} AuroMarkets FX. All Rights Reserved.
+              © {new Date().getFullYear()} MYBGFX. All Rights Reserved.
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}

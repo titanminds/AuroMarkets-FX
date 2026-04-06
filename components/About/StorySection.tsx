@@ -25,7 +25,7 @@ export default function StorySection() {
       year: "2018",
       title: "The Beginning",
       description:
-        "AuroMarkets FX founded with a vision to provide transparent forex trading to emerging markets",
+        "MYBGFX founded with a vision to provide transparent forex trading to emerging markets",
       icon: FiTarget,
       stats: "3 Founding Partners",
       color: "from-primary to-mate",
@@ -146,7 +146,7 @@ export default function StorySection() {
           transition={{ duration: 0.8, type: "spring" }}
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-black/10 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-mate/10 mb-6">
             <FiCalendar className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-white/80">
               Our Journey Since 2018
@@ -154,7 +154,7 @@ export default function StorySection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            The AuroMarkets{" "}
+            The MYBGFX{" "}
             <motion.span
               initial={{ backgroundPosition: "200% center" }}
               whileInView={{ backgroundPosition: "0% center" }}
@@ -192,9 +192,9 @@ export default function StorySection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 + index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/50 backdrop-blur-sm border border-black/5 rounded-xl p-4 text-center">
+              className="bg-white/50 backdrop-blur-sm border border-mate/5 rounded-xl p-4 text-center">
               <stat.icon className="w-5 h-5 text-primary mx-auto mb-2" />
-              <div className="text-xl font-bold text-black">{stat.value}</div>
+              <div className="text-xl font-bold text-mate">{stat.value}</div>
               <div className="text-xs text-mate">{stat.label}</div>
             </motion.div>
           ))}
@@ -255,7 +255,7 @@ export default function StorySection() {
                   {/* Content Card */}
                   <div
                     className={`relative ${isLeft ? "lg:mr-12" : "lg:ml-12"} mt-16 lg:mt-0`}>
-                    <div className="relative bg-white/80 backdrop-blur-xl border border-black/10 rounded-3xl p-8 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+                    <div className="relative bg-white/80 backdrop-blur-xl border border-mate/10 rounded-3xl p-8 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
                       {/* Corner Accents */}
                       <div
                         className={`absolute top-0 ${isLeft ? "right-0" : "left-0"} w-32 h-32 bg-gradient-to-br ${milestone.color} opacity-5 rounded-full -translate-y-16 ${isLeft ? "translate-x-16" : "-translate-x-16"}`}
@@ -281,7 +281,7 @@ export default function StorySection() {
                       )}
 
                       {/* Content */}
-                      <h3 className="text-2xl font-bold text-black mb-3">
+                      <h3 className="text-2xl font-bold text-mate mb-3">
                         {milestone.title}
                       </h3>
                       <p className="text-mate mb-4 leading-relaxed">
@@ -289,7 +289,7 @@ export default function StorySection() {
                       </p>
 
                       {/* Stats */}
-                      <div className="pt-4 border-t border-black/10">
+                      <div className="pt-4 border-t border-mate/10">
                         <div className="flex items-center gap-2">
                           <div
                             className={`w-2 h-2 rounded-full bg-gradient-to-r ${milestone.color}`}
@@ -320,10 +320,10 @@ export default function StorySection() {
           viewport={{ once: true }}
           className="mt-20 text-center space-y-5">
           <p className="text-mate text-lg">
-            Join 50,000+ traders who already trust AuroMarkets FX
+            Join 50,000+ traders who already trust MYBGFX
           </p>
           <Link
-            href="https://portal.auromarketsfx.com/register"
+            href="https://portal.mybgfx.com/register"
             className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors">
             Start Trading Today
           </Link>

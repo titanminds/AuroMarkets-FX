@@ -30,7 +30,7 @@ const GrowthSection = () => {
             <span className="text-primary">Value Transparency</span>
           </h2>
 
-          <Link href="https://portal.auromarketsfx.com/register" className="w-fit bg-primary text-mate px-4 md:px-7 py-2.5 md:py-3 rounded-sm flex items-center gap-2 font-bold text-[13px] md:text-[15px] hover:bg-primary/70 cursor-pointer transition-all active:scale-95 shadow-lg">
+          <Link href="https://portal.mybgfx.com/register" className="w-fit bg-primary text-mate px-4 md:px-7 py-2.5 md:py-3 rounded-sm flex items-center gap-2 font-bold text-[13px] md:text-[15px] hover:bg-primary/70 cursor-pointer transition-all active:scale-95 shadow-lg">
             Start Now <MdCallMade size={18} className="hidden md:block" />
           </Link>
         </div>
