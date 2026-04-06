@@ -58,7 +58,7 @@ export default function ClientLayout({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}>
             <Navbar />
-            {/* <GXGLogoLoader /> */}
+           {/* <FireLoader logoSrc={"/assets/images/favicon.png"} /> */}
             {children}
             <FloatingButtons />
             <Footer />

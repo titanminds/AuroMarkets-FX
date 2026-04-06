@@ -8,12 +8,12 @@ interface FireLoaderProps {
 
 const FireLoader: React.FC<FireLoaderProps> = ({ logoSrc, size = 200 }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-mate">
+    <div className="flex items-center justify-center min-h-screen bg-white">
       <div
         className="relative flex items-center justify-center"
         style={{ width: size, height: size }}>
         {/* The Outer Spinning Rings */}
-        <div className="absolute inset-0 border-4 border-transparent border-t-[#ffae00] border-l-[#ffae00] rounded-full animate-spin shadow-[0_0_15px_#ffae00] opacity-80"></div>
+        <div className="absolute inset-0 border-4 border-transparent border-t-primary border-l-primary rounded-full animate-spin shadow-[0_0_15px_#138DC8] opacity-80"></div>
         <div className="absolute inset-2 border-2 border-transparent border-b-white border-r-white rounded-full animate-spin-reverse opacity-60"></div>
 
         {/* Central Logo Container */}
