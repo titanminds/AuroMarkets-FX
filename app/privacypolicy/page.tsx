@@ -161,7 +161,7 @@ const PrivacyPolicyPage: React.FC = () => {
         <>
           <p className="mb-3">
             Welcome to{" "}
-            <span className="font-semibold text-primary">MYBGFX</span> ("we",
+            <span className="font-semibold text-primary">MyBGFx</span> ("we",
             "our", "us"). We are committed to protecting your personal data and
             respecting your privacy.
           </p>
@@ -183,15 +183,15 @@ const PrivacyPolicyPage: React.FC = () => {
         <>
           <p className="mb-3">
             The data controller for your personal data is{" "}
-            <span className="font-semibold">MYBGFX</span>.
+            <span className="font-semibold">MyBGFx</span>.
           </p>
           <p>
             Contact our Data Protection Officer at:{" "}
             <a
-              href="mailto:dpo@MYBGFX.com"
+              href="mailto:suport@mybgfx.com"
               className="text-primary font-medium hover:underline"
             >
-              dpo@MYBGFX.com
+              support@mybgfx.com
             </a>
           </p>
         </>
@@ -321,7 +321,7 @@ const PrivacyPolicyPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>MYBGFX Privacy Policy | Data Protection</title>
+        <title>MyBGFx Privacy Policy | Data Protection</title>
         <meta
           name="description"
           content="Protecting your personal data is our top priority. Learn how we collect, use, and safeguard your information."
@@ -668,7 +668,7 @@ const PrivacyPolicyPage: React.FC = () => {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-gray-400">
-              © {new Date().getFullYear()} MYBGFX. All rights reserved.
+              © {new Date().getFullYear()} MyBGFx. All rights reserved.
             </p>
             <p className="text-gray-500 text-sm mt-2">
               Protecting your privacy is our commitment

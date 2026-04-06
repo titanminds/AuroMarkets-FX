@@ -13,7 +13,7 @@ import { CgMail } from "react-icons/cg"
 const ContactSection = () => {
   const whatsappNumber = ""
   const whatsappMessage =
-    "Hello! I'm interested in learning more about MYBGFX."
+    "Hello! I'm interested in learning more about MyBGFx."
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   const handleWhatsAppClick = () => {
@@ -123,7 +123,7 @@ const ContactSection = () => {
                 <BiMapPin className="w-5 h-5 text-gray-300 group-hover:text-primary transition-colors" />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
-                MYBGFX UK LTD 114 Lowbrook road Ilford, London IG1 2HJ
+                MyBGFx UK LTD 114 Lowbrook road Ilford, London IG1 2HJ
                 United Kingdom
               </p>
             </div>

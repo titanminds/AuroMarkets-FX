@@ -25,7 +25,7 @@ export default function StorySection() {
       year: "2018",
       title: "The Beginning",
       description:
-        "MYBGFX founded with a vision to provide transparent forex trading to emerging markets",
+        "MyBGFx founded with a vision to provide transparent forex trading to emerging markets",
       icon: FiTarget,
       stats: "3 Founding Partners",
       color: "from-primary to-mate",
@@ -154,7 +154,7 @@ export default function StorySection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            The MYBGFX{" "}
+            The MyBGFx{" "}
             <motion.span
               initial={{ backgroundPosition: "200% center" }}
               whileInView={{ backgroundPosition: "0% center" }}
@@ -320,7 +320,7 @@ export default function StorySection() {
           viewport={{ once: true }}
           className="mt-20 text-center space-y-5">
           <p className="text-mate text-lg">
-            Join 50,000+ traders who already trust MYBGFX
+            Join 50,000+ traders who already trust MyBGFx
           </p>
           <Link
             href="https://portal.mybgfx.com/register"

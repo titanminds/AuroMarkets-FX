@@ -15,7 +15,7 @@ const DownloadSection = () => {
   const steps = [
     {
       id: 1,
-      title: "Download the MYBGFX App",
+      title: "Download the MyBGFx App",
       description: "Our app is available for both Android and iOS.",
       icon: FiSmartphone,
       color: "from-primary to-primary",
@@ -100,7 +100,7 @@ const DownloadSection = () => {
             <br className="hidden sm:block" /> any time
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed px-4">
-            With the MYBGFX App, you can trade whether you're at home or on the
+            With the MyBGFx App, you can trade whether you're at home or on the
             go. Benefit from advanced tools and features, no matter the
             situation.
           </p>
@@ -202,7 +202,7 @@ const DownloadSection = () => {
                         <FaQrcode className="text-white text-4xl" />
                         <div className="text-center">
                           <div className="text-white text-xs font-bold">
-                            MYBGFX
+                            MyBGFx
                           </div>
                           <div className="text-gray-400 text-[10px]">
                             Scan to download
@@ -219,7 +219,7 @@ const DownloadSection = () => {
                   <h4 className="text-lg font-bold mb-2">Mobile QR Download</h4>
                   <p className="text-gray-300 text-sm mb-4">
                     Scan this QR code with your mobile device to download the
-                    MYBGFX app directly.
+                    MyBGFx app directly.
                   </p>
                   <p className="text-gray-400 text-xs">
                     Available on App Store and Google Play
@@ -253,7 +253,7 @@ const DownloadSection = () => {
                   {/* Actual Image - Replace with your image path */}
                   <Image
                     src="/assets/images/phone2.png"
-                    alt="MYBGFX Mobile App Interface"
+                    alt="MyBGFx Mobile App Interface"
                     fill
                     className="object-contain object-center"
                     sizes="(max-width: 768px) 400px, (max-width: 1024px) 500px, 600px"

@@ -259,11 +259,11 @@ const FAQSection: React.FC = () => {
   // All FAQs combined
   const allFaqs = [
     {
-      question: "What is MYBGFX Global?",
-      answer: "MYBGFX Global is a forex trading platform offering currency trading, CFDs, commodities, and indices with 24/7 support.",
+      question: "What is MyBGFx Global?",
+      answer: "MyBGFx Global is a forex trading platform offering currency trading, CFDs, commodities, and indices with 24/7 support.",
     },
     {
-      question: "Is MYBGFX Global regulated?",
+      question: "Is MyBGFx Global regulated?",
       answer: "Yes, we are fully regulated and licensed under international financial authorities.",
     },
     {

@@ -460,7 +460,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="text-center md:text-left"
             >
-              © {new Date().getFullYear()} MYBGFX. All Rights Reserved.
+              © {new Date().getFullYear()} MyBGFx. All Rights Reserved.
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}

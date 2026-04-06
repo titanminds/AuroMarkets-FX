@@ -85,7 +85,7 @@
 //       className="relative py-24 overflow-hidden"
 //       style={{
 //         backgroundImage:
-//           'url("https://MYBGFXglobal.com/wp-content/uploads/2023/03/shape-32-1.png")',
+//           'url("https://MyBGFxglobal.com/wp-content/uploads/2023/03/shape-32-1.png")',
 //         backgroundAttachment: "scroll",
 //         backgroundSize: "cover",
 //         backgroundPosition: "center",
@@ -96,7 +96,7 @@
 //           <div
 //             className="absolute inset-0"
 //             style={{
-//               backgroundImage: `url("https://MYBGFXglobal.com/wp-content/uploads/2023/03/shape-33-1.png")`,
+//               backgroundImage: `url("https://MyBGFxglobal.com/wp-content/uploads/2023/03/shape-33-1.png")`,
 //               backgroundSize: "100% 100%",
 //               backgroundRepeat: "repeat",
 //               backgroundPosition: "center",
@@ -381,7 +381,7 @@ const TeamSection = () => {
         className="relative py-24 overflow-hidden"
         style={{
           backgroundImage:
-            'url("https://MYBGFXglobal.com/wp-content/uploads/2023/03/shape-32-1.png")',
+            'url("https://MyBGFxglobal.com/wp-content/uploads/2023/03/shape-32-1.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}>

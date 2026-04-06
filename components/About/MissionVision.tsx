@@ -103,7 +103,7 @@ export default function MissionVision() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mate border border-mate/10 mb-6">
             <FiGlobe className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-white/80">
-              MYBGFX - Your Trusted Broker
+              MyBGFx - Your Trusted Broker
             </span>
           </div>
 

@@ -33,7 +33,7 @@ const BenefitsSection = () => {
           className="absolute top-20 inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url("https://i.pinimg.com/736x/96/f9/f1/96f9f1cff5f0f97edb10aa44b01b9e72.jpg")',
+              'url("/assets/images/bgbenifits.png")',
             backgroundAttachment: "fixed",
           }}
         />

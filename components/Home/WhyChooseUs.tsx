@@ -178,7 +178,7 @@ export default function Ecosystem() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-mate/80 text-sm lg:text-base max-w-2xl mx-auto">
-          MYBGFX is fully integrated to cover all your needs
+          MyBGFx is fully integrated to cover all your needs
         </motion.p>
       </div>
 
