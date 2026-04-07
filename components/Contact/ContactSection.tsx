@@ -165,7 +165,7 @@ const ContactSection = () => {
 
           {/* View on Google Map Button */}
           <button
-            onClick={handleGoogleMapClick}
+           
             className="w-full mt-12 py-4 border border-primary rounded-md flex items-center justify-center gap-3 hover:bg-primary transition-all text-sm font-bold group">
             View On Google Map
             <BsArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
