@@ -48,7 +48,7 @@ const ContactSection = () => {
       {/* Background Image Container */}
       <div className="absolute bottom-0 inset-0 z-0 select-none pointer-events-none opacity-100">
         <img
-          src="https://capitalfxglobal.com/wp-content/uploads/2023/03/shape-49-1.png"
+          src="/assets/images/contactbg.png"
           alt="Background Decor"
           className="w-full h-full object-cover object-center"
         />
