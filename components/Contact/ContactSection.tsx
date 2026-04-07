@@ -11,7 +11,7 @@ import { BsArrowUpRight } from "react-icons/bs"
 import { CgMail } from "react-icons/cg"
 
 const ContactSection = () => {
-  const whatsappNumber = "+1 (234) 529-4342"
+  const whatsappNumber = "12345294342"
   const whatsappMessage =
     "Hello! I'm interested in learning more about MyBGFx."
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
@@ -82,7 +82,7 @@ const ContactSection = () => {
                 Just Share your ph num, we will back.
               </p>
               <a
-                href="tel:+"
+                href="tel:+1 (234) 529-4342"
                 className="flex items-center gap-2 cursor-pointer font-bold text-sm text-slate-900 border-b-2 border-transparent hover:border-primary transition-all group">
                 Call Us{" "}
                 <BsArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
