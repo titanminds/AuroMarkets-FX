@@ -68,7 +68,7 @@ const HangingCards = () => {
               </div>
 
               {/* Modern Action Button */}
-              <button className="mt-10 group/btn relative inline-flex items-center justify-center px-8 py-3 font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-primary cursor-pointer hover:text-mate">
+              <button className="mt-10 group/btn relative inline-flex items-center justify-center px-8 py-3 font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-primary cursor-pointer ">
                 Explore More
                 <LuMoveUpRight className="ml-2 w-5 h-5 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
               </button>

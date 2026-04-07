@@ -48,13 +48,13 @@ const Navbar = () => {
           flex items-center justify-between
           transition-all duration-500 ease-in-out
           bg-mate/90 backdrop-blur-xl border border-white/10
-          ${scrolled ? "w-full max-w-5xl rounded-2xl px-6 py-2 shadow-2xl" : "w-full max-w-7xl rounded-3xl px-8 py-2"}
+          ${scrolled ? "w-full max-w-6xl rounded-2xl px-6 py-2 shadow-2xl" : "w-full max-w-7xl rounded-3xl px-8 py-2"}
         `}
       >
         {/* Logo */}
         <Link href="/" className="relative group shrink-0">
           <img
-            src="/assets/images/Logo.png"
+            src="/assets/images/Logo-B.png"
             alt="Logo"
             className={`transition-all duration-500 ${scrolled ? "h-10 md:h-12" : "h-14 md:h-16"}`}
           />
@@ -79,7 +79,7 @@ const Navbar = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:block">
             <Link
               href="https://portal.mybgfx.com/register"
-              className="relative inline-flex items-center gap-2 bg-primary text-mate px-6 py-2.5 rounded-xl font-bold text-sm overflow-hidden group"
+              className="relative inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-xl font-bold text-sm overflow-hidden group"
             >
               {/* Shimmer Effect */}
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

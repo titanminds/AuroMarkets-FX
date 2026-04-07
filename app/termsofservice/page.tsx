@@ -505,7 +505,7 @@ const TermsAndConditionsPage: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="bg-gradient-to-r from-primary/90 to-primary text-white"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-30 md:py-40">
               <div className="text-center max-w-3xl mx-auto">
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}

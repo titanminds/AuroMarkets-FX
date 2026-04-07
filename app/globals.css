@@ -2,6 +2,7 @@
 
 :root {
   --background: #ffffff;
+  --white:#F8F8F6;
   --primary:#138DC8;
   --mate:#1b1d24;
   --font-geist-sans:
@@ -13,6 +14,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-white: var(--white);
   --color-primary: var(--primary);
   --color-mate: var(--mate);
   --font-sans: var(--font-geist-sans);

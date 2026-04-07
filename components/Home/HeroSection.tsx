@@ -110,7 +110,7 @@ const HeroSection: React.FC = () => {
                 boxShadow: "0 0 40px rgba(var(--primary-rgb), 0.3)",
               }}
               whileTap={{ scale: 0.98 }}
-              className="relative inline-flex items-center justify-center bg-primary text-mate font-extrabold px-12 py-5 rounded-2xl text-xl tracking-tight transition-all">
+              className="relative inline-flex items-center justify-center bg-primary text-white font-extrabold px-12 py-5 rounded-2xl text-xl tracking-tight transition-all">
               Start Trading Now
             </motion.a>
           </motion.div>

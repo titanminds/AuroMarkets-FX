@@ -8,11 +8,11 @@ import Ecosystem from "../components/Home/WhyChooseUs";
 
 export default function Home() {
   return (
-    <>
-      <HeroSection />
+    <> 
+      <HeroSection /> 
       {/* <TradingViewTicker /> */}
       <HangingCards />
-      <PricingList />
+      <PricingList /> 
       <Ecosystem />
       <BenefitsSection />
       <DownloadSection />
