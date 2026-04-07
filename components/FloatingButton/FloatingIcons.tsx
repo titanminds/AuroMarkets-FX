@@ -11,7 +11,7 @@ const FloatingButtons = () => {
   const [isScrolling, setIsScrolling] = useState(false)
 
   // WhatsApp phone number (using international format without +)
-  const whatsappNumber = ""
+  const whatsappNumber = "+1 (234) 529-4342"
   const whatsappMessage = "Hello! I'm interested in learning more about MyBGFx."
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 

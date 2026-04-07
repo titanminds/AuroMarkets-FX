@@ -133,13 +133,13 @@ const Footer: React.FC = () => {
                     <FaEnvelope className="text-primary" />
                     support@mybgfx.com
                   </a>
-                  {/* <a
-                    href="tel:+971588856256"
+                  <a
+                    href="tel:+1 (234) 529-4342"
                     className="flex items-center justify-center gap-2 text-sm text-mate/70 hover:text-primary transition-colors"
                   >
                     <FaPhone className="text-primary" />
-                    +971 588856256
-                  </a> */}
+                    +1 (234) 529-4342
+                  </a>
                   <div className="flex items-center justify-center gap-2 text-sm text-mate/70">
                     <FaMapMarkerAlt className="text-primary" />
                     Dubai, UAE
@@ -334,13 +334,13 @@ const Footer: React.FC = () => {
                   <FaEnvelope className="text-primary/70" />
                   support@mybgfx.com
                 </a>
-                {/* <a
-                  href="tel:+971588856256"
+                <a
+                  href="tel:+1 (234) 529-4342"
                   className="block text-sm text-mate/70 hover:text-primary cursor-pointer transition-colors hover:translate-x-1 hover:underline flex items-center gap-2"
                 >
                   <FaPhone className="text-primary/70" />
-                  +971 588856256
-                </a> */}
+                  +1 (234) 529-4342
+                </a>
                 <p className="text-sm text-mate/70 flex items-center gap-2">
                   <FaMapMarkerAlt className="text-primary/70" />
                   Dubai, UAE
