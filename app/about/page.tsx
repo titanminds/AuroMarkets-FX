@@ -4,6 +4,12 @@ import StorySection from "../../components/About/StorySection"
 import TeamSection from "../../components/About/TeamSection"
 import GrowthSection from "../../components/About/GrowthSection"
 
+export const metadata = {
+  title: "About MyBGFx | Forex Trading Platform in Pakistan",
+  description:
+    "Learn about MyBGFx and our mission to deliver the best forex trading platform for Pakistani traders.",
+};
+
 const About = () => {
   return (
     <>

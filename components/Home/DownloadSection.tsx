@@ -80,7 +80,7 @@ const DownloadSection = () => {
   };
 
   return (
-    <section className="bg-mate text-white py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-24 font-sans overflow-hidden">
+    <section className="bg-mate text-white pb-16 md:pb-24 lg:pb-32 px-4 sm:px-6 md:px-12 lg:px-24 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
