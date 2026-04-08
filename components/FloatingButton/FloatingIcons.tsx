@@ -192,7 +192,7 @@ const FloatingButtons = () => {
             whileHover={{ scale: 1.1, backgroundColor: "var(--primary)" }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToTop}
-            className="fixed bottom-16 right-4 md:right-6 lg:right-8 z-50 w-12 h-12 md:w-14 md:h-14 bg-primary rounded-full flex items-center justify-center shadow-xl border border-white/10 hover:border-primary/50 transition-all group"
+            className="fixed bottom-28 right-4 md:right-6 lg:right-8 z-50 w-12 h-12 md:w-14 md:h-14 bg-primary rounded-full flex items-center justify-center shadow-xl border border-white/10 hover:border-primary/50 transition-all group"
           >
             {/* Animated arrow with trail effect */}
             <div className="relative">
