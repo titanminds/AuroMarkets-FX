@@ -5,6 +5,7 @@ import HangingCards from "../components/Home/HangingCards"
 import HeroSection from "../components/Home/HeroSection"
 import PricingList from "../components/Home/PricingList"
 import Ecosystem from "../components/Home/WhyChooseUs"
+import OpenAccountSection from "../components/Home/OpenAccountSection"
 
 export const metadata = {
   title: "Best Forex Trading Platform in Pakistan | MyBGFx",
@@ -25,6 +26,7 @@ export default function Home() {
       <HangingCards />
       <PricingList />
       <Ecosystem />
+      <OpenAccountSection />
       <BenefitsSection />
       <section className="bg-mate text-white pt-24 pb-10">
         <div className="max-w-6xl mx-auto px-6">
