@@ -7,6 +7,7 @@ import FloatingButtons from "../components/FloatingButton/FloatingIcons"
 import FireLoader from "./PendulumLoaderWithImage"
 import { AnimatePresence, motion } from "framer-motion"
 import { usePathname } from "next/navigation"
+import Script from "next/script"
 
 export default function ClientLayout({
   children,
@@ -14,7 +15,7 @@ export default function ClientLayout({
   children: React.ReactNode
 }) {
   const [loading, setLoading] = useState(true)
-   const pathname = usePathname()
+  const pathname = usePathname()
   useEffect(() => {
     // Hide loader when page is fully loaded
     const handleLoad = () => {
@@ -58,10 +59,23 @@ export default function ClientLayout({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}>
             <Navbar />
-           {/* <FireLoader logoSrc={"/assets/images/favicon.png"} /> */}
+            {/* <FireLoader logoSrc={"/assets/images/favicon.png"} /> */}
             {children}
             <FloatingButtons />
             <Footer />
+
+            <Script type="text/javascript">
+              {`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/69d620c2c681461c33e51abf/1jlm6vu6u';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+                })();`}
+            </Script>
+
           </motion.div>
         )}
       </AnimatePresence>

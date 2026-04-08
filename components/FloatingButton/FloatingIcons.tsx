@@ -64,7 +64,7 @@ const FloatingButtons = () => {
   return (
     <>
       {/* Floating WhatsApp Button */}
-      <motion.div
+      {/* <motion.div
         className="fixed bottom-24 right-4 md:right-6 lg:right-8 z-50"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -77,7 +77,7 @@ const FloatingButtons = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        {/* WhatsApp Message Popup */}
+     
         <AnimatePresence>
           {showWhatsAppMessage && (
             <motion.div
@@ -87,7 +87,7 @@ const FloatingButtons = () => {
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="absolute bottom-full right-0 mb-4 w-72 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-2xl p-4 border border-green-400/30"
             >
-              {/* Close button */}
+           
               <button
                 onClick={() => setShowWhatsAppMessage(false)}
                 className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center text-green-600 hover:bg-gray-100 transition-colors shadow-lg"
@@ -95,7 +95,7 @@ const FloatingButtons = () => {
                 <FaTimes className="w-3 h-3" />
               </button>
 
-              {/* Message content */}
+             
               <div className="flex items-start gap-3 mb-3">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                   <FaWhatsapp className="w-6 h-6 text-white" />
@@ -123,12 +123,12 @@ const FloatingButtons = () => {
           )}
         </AnimatePresence>
 
-        {/* WhatsApp Button */}
+       
         <button
           onClick={() => setShowWhatsAppMessage(!showWhatsAppMessage)}
           className="relative group"
         >
-          {/* Pulsing ring effect */}
+         
           <motion.div
             className="absolute inset-0 bg-green-500 rounded-full"
             animate={{
@@ -142,7 +142,7 @@ const FloatingButtons = () => {
             }}
           />
 
-          {/* Main button */}
+         
           <motion.div
             className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-xl shadow-green-500/30 border-2 border-white/20 group-hover:border-white/40 transition-colors"
             whileHover={{ scale: 1.1 }}
@@ -151,7 +151,6 @@ const FloatingButtons = () => {
             <FaWhatsapp className="w-7 h-7 md:w-8 md:h-8 text-white" />
           </motion.div>
 
-          {/* Unread message indicator */}
           <motion.div
             className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full border-2 border-mate flex items-center justify-center"
             initial={{ scale: 0 }}
@@ -161,7 +160,7 @@ const FloatingButtons = () => {
             <span className="text-white text-xs font-bold">1</span>
           </motion.div>
 
-          {/* Hover tooltip */}
+         
           <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
             <div className="bg-mate/90 text-white text-sm py-2 px-3 rounded-lg whitespace-nowrap">
               Chat with Support
@@ -171,7 +170,7 @@ const FloatingButtons = () => {
             </div>
           </div>
         </button>
-      </motion.div>
+      </motion.div> */}
 
       {/* Back to Top Button */}
       <AnimatePresence>
@@ -193,7 +192,7 @@ const FloatingButtons = () => {
             whileHover={{ scale: 1.1, backgroundColor: "var(--primary)" }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToTop}
-            className="fixed bottom-4 right-4 md:right-6 lg:right-8 z-50 w-12 h-12 md:w-14 md:h-14 bg-primary rounded-full flex items-center justify-center shadow-xl border border-white/10 hover:border-primary/50 transition-all group"
+            className="fixed bottom-16 right-4 md:right-6 lg:right-8 z-50 w-12 h-12 md:w-14 md:h-14 bg-primary rounded-full flex items-center justify-center shadow-xl border border-white/10 hover:border-primary/50 transition-all group"
           >
             {/* Animated arrow with trail effect */}
             <div className="relative">
